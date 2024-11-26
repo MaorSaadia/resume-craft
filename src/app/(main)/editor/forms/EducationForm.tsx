@@ -1,16 +1,6 @@
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { EditorFormProps } from "@/lib/types";
-import { cn } from "@/lib/utils";
-import { educationSchema, EducationValues } from "@/lib/validation";
+import { useEffect } from "react";
+import { GripHorizontal } from "lucide-react";
+import { useFieldArray, useForm, UseFormReturn } from "react-hook-form";
 import {
   closestCenter,
   DndContext,
@@ -30,9 +20,20 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { GripHorizontal } from "lucide-react";
-import { useEffect } from "react";
-import { useFieldArray, useForm, UseFormReturn } from "react-hook-form";
+
+import { cn } from "@/lib/utils";
+import { educationSchema, EducationValues } from "@/lib/validation";
+import { EditorFormProps } from "@/lib/types";
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 
 export default function EducationForm({
   resumeData,

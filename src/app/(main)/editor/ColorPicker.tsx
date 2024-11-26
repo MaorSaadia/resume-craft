@@ -1,12 +1,13 @@
+import { useState } from "react";
+import { PaletteIcon } from "lucide-react";
+import { Color, ColorChangeHandler, TwitterPicker } from "react-color";
+
 import { Button } from "@/components/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { PaletteIcon } from "lucide-react";
-import { useState } from "react";
-import { Color, ColorChangeHandler, TwitterPicker } from "react-color";
 
 interface ColorPickerProps {
   color: Color | undefined;
