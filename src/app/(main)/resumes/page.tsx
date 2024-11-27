@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import { PlusSquare } from "lucide-react";
 import { auth } from "@clerk/nextjs/server";
 
-import prisma from "@/lib/prisma";
 import { Button } from "@/components/ui/button";
 import { resumeDataInclude } from "@/lib/types";
+import prisma from "@/lib/prisma";
 import ResumeItem from "./ResumeItem";
 
 export const metadata: Metadata = {
