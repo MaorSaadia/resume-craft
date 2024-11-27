@@ -62,6 +62,8 @@ export async function generateWorkExperience(
   const { description } = generateWorkExperienceSchema.parse(input);
 
   const prompt = `
+  You are a job resume generator AI. Your task is to generate a single work experience entry based on the user input.
+  Your response must adhere to the following structure. You can omit fields if they can't be infered from the provided data, but don't add any new ones.
   Generate a structured work experience entry based on this description:
   ${description}
   
