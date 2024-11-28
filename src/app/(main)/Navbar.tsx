@@ -7,13 +7,11 @@ import { useTheme } from "next-themes";
 import { UserButton } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
-import lightlogo from "@/assets/resume-craft-logo-light.png";
-import darklogo from "@/assets/resume-craft-logo-dark.png";
+import logo from "@/assets/resume-craft-logo.png";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   const { resolvedTheme } = useTheme();
-  const logo = resolvedTheme === "light" ? lightlogo : darklogo;
 
   return (
     <header className="shadow-sm">
