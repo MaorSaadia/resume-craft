@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <>
-      <MaxWidthWrapper className="mb-12 mt-28 flex flex-col items-center justify-center text-center sm:mt-28">
+      <MaxWidthWrapper className="justify-cente mb-12 mt-28 flex flex-col items-center text-center sm:mt-28">
         <div className="mx-auto mb-8 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50">
           <p className="text-sm font-semibold text-gray-700">
             AI-Powered Resume Building is Here!
@@ -20,7 +20,7 @@ export default function Home() {
           </span>{" "}
           in Minutes
         </h1>
-        <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
+        <p className="mt-5 max-w-prose text-zinc-700 dark:text-zinc-300 sm:text-lg">
           ResumeCraft uses <span className="font-bold">advanced AI</span> to
           help you create a professional, standout resume with ease - no design
           skills required.
@@ -49,14 +49,14 @@ export default function Home() {
           <div>
             <div className="mx-auto max-w-6xl px-6 lg:px-8">
               <div className="mt-16 flow-root sm:mt-24">
-                <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+                <div className="dark:bg-gray-50/2 -m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 dark:bg-gray-100/50 dark:ring-gray-100/50 lg:-m-4 lg:rounded-2xl lg:p-4">
                   <Image
                     src="/dashboard-preview.png"
                     alt="product preview"
                     width={1280}
                     height={720}
                     quality={100}
-                    className="rounded-md bg-white p-2 shadow-2xl ring-1 ring-gray-900/10 sm:p-8 md:p-20"
+                    className="rounded-md bg-white p-2 shadow-2xl ring-1 ring-gray-900/10 dark:ring-gray-100/50 sm:p-8 md:p-20"
                   />
                 </div>
               </div>
@@ -79,25 +79,25 @@ export default function Home() {
       </div>
 
       {/* Feature section */}
-      <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-48">
+      <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-36">
         <div className="mb-12 px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
-            <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
+            <h2 className="mt-2 text-4xl font-bold text-zinc-900 dark:text-zinc-300 sm:text-5xl">
               Simple Resume Creation
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
+            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-200">
               Build your resume with an easy, step-by-step process
             </p>
           </div>
         </div>
 
         {/* steps */}
-        <ol className="my-8 space-y-4 pt-8 md:flex md:space-x-12 md:space-y-0">
+        <ol className="m-2 my-8 space-y-4 pt-8 md:flex md:space-x-12 md:space-y-0">
           <li className="md:flex-1">
             <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
               <span className="text-sm font-medium text-green-600">Step 1</span>
               <span className="text-xl font-semibold">Enter Your Details</span>
-              <span className="mt-2 text-zinc-700">
+              <span className="mt-2 text-zinc-700 dark:text-zinc-300">
                 Add your basic information, or let our AI help you generate
                 professional content for your resume.
               </span>
@@ -109,7 +109,7 @@ export default function Home() {
               <span className="text-xl font-semibold">
                 Customize Your Design
               </span>
-              <span className="mt-2 text-zinc-700">
+              <span className="mt-2 text-zinc-700 dark:text-zinc-300">
                 Personalize your resume with color schemes and shape variations.
               </span>
             </div>
@@ -118,7 +118,7 @@ export default function Home() {
             <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
               <span className="text-sm font-medium text-green-600">Step 3</span>
               <span className="text-xl font-semibold">Export & Apply</span>
-              <span className="mt-2 text-zinc-700">
+              <span className="mt-2 text-zinc-700 dark:text-zinc-300">
                 Download your resume as a PDF or print directly.
               </span>
             </div>
@@ -145,7 +145,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="mb-2 text-xl font-semibold">AI Generator</h3>
-              <p className="text-gray-600">
+              <p className="text-zinc-600 dark:text-zinc-200">
                 Smart AI generator to populate your resume quickly and
                 effectively.
               </p>
@@ -168,7 +168,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="mb-2 text-xl font-semibold">Drag & Drop</h3>
-              <p className="text-gray-600">
+              <p className="text-zinc-600 dark:text-zinc-200">
                 Easily customize your resume layout with intuitive
                 drag-and-drop.
               </p>
@@ -191,7 +191,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="mb-2 text-xl font-semibold">Print & Save</h3>
-              <p className="text-gray-600">
+              <p className="text-zinc-600 dark:text-zinc-200">
                 Instantly generate PDFs or print your resume with professional
                 formatting.
               </p>
