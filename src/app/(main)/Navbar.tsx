@@ -12,10 +12,8 @@ import darklogo from "@/assets/resume-craft-logo-dark.png";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
-  const { theme } = useTheme();
-  console.log(theme);
-
-  const logo = theme === "light" ? lightlogo : darklogo;
+  const { resolvedTheme } = useTheme();
+  const logo = resolvedTheme === "light" ? lightlogo : darklogo;
 
   return (
     <header className="shadow-sm">
@@ -27,7 +25,7 @@ export default function Navbar() {
             width={40}
             height={40}
             quality={100}
-            // className="rounded-full"
+            className="transition-all duration-300 ease-in-out"
           />
           <span className="text-xl font-bold tracking-tight">Resume Craft</span>
         </Link>
@@ -35,7 +33,7 @@ export default function Navbar() {
           <ThemeToggle />
           <UserButton
             appearance={{
-              baseTheme: theme === "dark" ? dark : undefined,
+              baseTheme: resolvedTheme === "dark" ? dark : undefined,
               elements: {
                 avatarBox: {
                   width: 35,
