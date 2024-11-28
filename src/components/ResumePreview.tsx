@@ -1,10 +1,11 @@
-import { BorderStyles } from "@/app/(main)/editor/BorderStyleButton";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { formatDate } from "date-fns";
+
 import useDimensions from "@/hooks/useDimensions";
+import { BorderStyles } from "@/app/(main)/editor/BorderStyleButton";
 import { cn } from "@/lib/utils";
 import { ResumeValues } from "@/lib/validation";
-import { formatDate } from "date-fns";
-import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
 import { Badge } from "./ui/badge";
 
 interface ResumePreviewProps {
