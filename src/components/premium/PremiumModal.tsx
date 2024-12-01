@@ -1,14 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { Check } from "lucide-react";
+import { useState } from "react";
 
 import usePremiumModal from "@/hooks/usePremiumModal";
 import { useToast } from "@/hooks/use-toast";
 import { env } from "@/env";
-import { createCheckoutSession } from "./actions";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
+import { createCheckoutSession } from "./actions";
 
 const premiumFeatures = ["AI tools", "Up to 3 resumes"];
 const premiumPlusFeatures = ["Infinite resumes", "Design customizations"];
@@ -17,13 +17,12 @@ export default function PremiumModal() {
   const { open, setOpen } = usePremiumModal();
 
   const { toast } = useToast();
-
   const [loading, setLoading] = useState(false);
 
-  async function handlePremiumClick(priceId: string) {
+  async function handlePremiumClick(variantId: string) {
     try {
       setLoading(true);
-      const redirectUrl = await createCheckoutSession(priceId);
+      const redirectUrl = await createCheckoutSession(variantId);
       window.location.href = redirectUrl;
     } catch (error) {
       console.error(error);
@@ -65,7 +64,7 @@ export default function PremiumModal() {
               <Button
                 onClick={() =>
                   handlePremiumClick(
-                    env.NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_MONTHLY,
+                    env.NEXT_PUBLIC_LEMON_SQUEEZY_VARIANT_ID_PRO_MONTHLY,
                   )
                 }
                 disabled={loading}
@@ -90,7 +89,7 @@ export default function PremiumModal() {
                 variant="premium"
                 onClick={() =>
                   handlePremiumClick(
-                    env.NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_PLUS_MONTHLY,
+                    env.NEXT_PUBLIC_LEMON_SQUEEZY_VARIANT_ID_PRO_PLUS_MONTHLY,
                   )
                 }
                 disabled={loading}
