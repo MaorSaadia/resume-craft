@@ -77,17 +77,17 @@ model Education {
   @@map("educations")
 }
 
-// model UserSubscription {
-//   id                      String   @id @default(cuid())
-//   userId                  String   @unique
-//   stripeCustomerId        String   @unique
-//   stripeSubscriptionId    String   @unique
-//   stripePriceId           String
-//   stripeCurrentPeriodEnd  DateTime
-//   stripeCancelAtPeriodEnd Boolean  @default(false)
+model UserSubscription {
+  id                      String   @id @default(cuid())
+  userId                  String   @unique
+  lemonSqueezyCustomerId        String   @unique
+  lemonSqueezySubscriptionId    String   @unique
+  lemonSqueezyPriceId           String
+  lemonSqueezyCurrentPeriodEnd  DateTime
+  lemonSqueezyCancelAtPeriodEnd Boolean  @default(false)
 
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-//   @@map("user_subscriptions")
-// }
+  @@map("user_subscriptions")
+}
