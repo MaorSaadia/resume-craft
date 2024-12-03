@@ -8,14 +8,12 @@ import {
 } from "@lemonsqueezy/lemonsqueezy.js";
 import { env } from "@/env";
 
-// Ensure Lemonsqueezy is setup
 lemonSqueezySetup({
   apiKey: env.LEMON_SQUEEZY_API_KEY,
   onError: (error) => console.error("Lemonsqueezy Checkout Error:", error),
 });
 
 export async function createCheckoutSession(variantId: string) {
-  console.log(variantId);
   const user = await currentUser();
 
   if (!user) {
@@ -24,11 +22,11 @@ export async function createCheckoutSession(variantId: string) {
 
   const newCheckout: NewCheckout = {
     productOptions: {
-      name: "Resume Builder AI Premium",
-      description: "Premium subscription for AI Resume Builder",
+      name: "Resume Craft Premium",
+      description: "Premium subscription Resume Craft",
     },
     checkoutOptions: {
-      embed: false, // Set to false for full page redirect
+      embed: false,
       media: true,
       logo: true,
     },
@@ -39,9 +37,10 @@ export async function createCheckoutSession(variantId: string) {
         userId: user.id,
       },
     },
+
     expiresAt: null,
     preview: false,
-    testMode: process.env.NODE_ENV !== "production",
+    // testMode: process.env.NODE_ENV !== "production",
   };
 
   try {

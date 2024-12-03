@@ -9,7 +9,8 @@ export const env = createEnv({
     GEMINI_API_KEY: z.string().min(1),
     LEMON_SQUEEZY_API_KEY: z.string().min(1),
     LEMON_SQUEEZY_STORE_ID: z.string().min(1),
-    LEMON_SQUEEZY_WEBHOOK_SIGNATURE: z.string().min(1),
+    // LEMON_SQUEEZY_WEBHOOK_SIGNATURE: z.string().min(1),
+    LEMON_SQUEEZY_WEBHOOK_SECRET: z.string().min(1),
   },
   client: {
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
