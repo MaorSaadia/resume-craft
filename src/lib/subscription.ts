@@ -12,7 +12,6 @@ export const getUserSubscriptionLevel = cache(
         userId,
       },
     });
-
     if (
       !subscription ||
       subscription.lemonSqueezyCurrentPeriodEnd < new Date()

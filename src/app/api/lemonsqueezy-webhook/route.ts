@@ -11,18 +11,20 @@ export async function POST(req: NextRequest) {
     // Get the raw payload
     const rawPayload = await req.text();
 
+    // Parse the payload
+    let event;
+    try {
+      event = JSON.parse(rawPayload);
+    } catch (parseError) {
+      console.error("JSON Parsing Error:", parseError);
+      return new Response("Invalid JSON payload", { status: 400 });
+    }
+
     // Important: Lemon Squeezy uses specific headers
     const signature = req.headers.get("X-Signature") || "";
     const eventType = req.headers.get("X-Event-Name") || "";
 
-    console.log("Received Event Type:", eventType);
-    console.log("Raw Payload:", rawPayload);
-    console.log("Signature:", signature);
-
-    // Parse the payload
-    const event = JSON.parse(rawPayload);
-
-    // Signature Verification
+    // Signature Verification function
     function verifyWebhookSignature(
       payload: string,
       signature: string,
@@ -65,10 +67,11 @@ export async function POST(req: NextRequest) {
 
 async function handleSubscriptionCreated(event: any) {
   const data = event.data;
+  const userId = event.meta.custom_data.user_id;
 
   await prisma.userSubscription.create({
     data: {
-      userId: data.attributes.user_email, // Use a reliable user identifier
+      userId: userId,
       lemonSqueezySubscriptionId: data.id,
       lemonSqueezyCustomerId: data.attributes.customer_id.toString(),
       lemonSqueezyPriceId: data.attributes.variant_id.toString(),
