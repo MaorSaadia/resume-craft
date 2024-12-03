@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import crypto from "crypto";
 import { NextRequest } from "next/server";
-// import { clerkClient } from "@clerk/nextjs/server";
 
 import { env } from "@/env";
 import prisma from "@/lib/prisma";
@@ -20,7 +19,7 @@ export async function POST(req: NextRequest) {
       return new Response("Invalid JSON payload", { status: 400 });
     }
 
-    // Important: Lemon Squeezy uses specific headers
+    // Lemon Squeezy specific headers
     const signature = req.headers.get("X-Signature") || "";
     const eventType = req.headers.get("X-Event-Name") || "";
 
@@ -43,7 +42,6 @@ export async function POST(req: NextRequest) {
       return new Response("Invalid signature", { status: 400 });
     }
 
-    // Process different event types
     switch (eventType) {
       case "subscription_created":
         await handleSubscriptionCreated(event);

@@ -21,7 +21,7 @@ export async function verifyLemonSqueezyConnection() {
       return { success: false, error: error.message };
     }
 
-    console.log("Lemonsqueezy User Data:", data);
+    // console.log("Lemonsqueezy User Data:", data);
     return { success: true, data };
   } catch (catchError) {
     console.error("Unexpected Lemonsqueezy Error:", catchError);
