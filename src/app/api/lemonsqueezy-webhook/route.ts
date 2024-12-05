@@ -23,6 +23,8 @@ export async function POST(req: NextRequest) {
     const signature = req.headers.get("X-Signature") || "";
     const eventType = req.headers.get("X-Event-Name") || "";
 
+    // console.log(eventType);
+
     // Signature Verification function
     function verifyWebhookSignature(
       payload: string,

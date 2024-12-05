@@ -40,7 +40,7 @@ export async function createCheckoutSession(variantId: string) {
 
     expiresAt: null,
     preview: false,
-    // testMode: process.env.NODE_ENV !== "production",
+    testMode: process.env.NODE_ENV !== "production",
   };
 
   try {
