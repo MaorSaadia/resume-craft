@@ -37,7 +37,7 @@ export async function createCustomerPortalSession() {
     const result = await getSubscription(
       subscription.lemonSqueezySubscriptionId,
     );
-    console.log("Full Subscription Result:", JSON.stringify(result, null, 2));
+    // console.log("Full Subscription Result:", JSON.stringify(result, null, 2));
 
     // Access the customer portal URL from the nested structure
     const originalCustomerPortalUrl =
