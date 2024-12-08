@@ -67,6 +67,27 @@ export const educationSchema = z.object({
 
 export type EducationValues = z.infer<typeof educationSchema>;
 
+export const projectExperienceSchema = z.object({
+  projectExperiences: z
+    .array(
+      z.object({
+        title: optionalString,
+        technologies: optionalString,
+        startDate: optionalString,
+        endDate: optionalString,
+        description: optionalString,
+        link: optionalString,
+      }),
+    )
+    .optional(),
+});
+
+export type ProjectExperienceValues = z.infer<typeof projectExperienceSchema>;
+
+export type ProjectExperience = NonNullable<
+  z.infer<typeof projectExperienceSchema>["projectExperiences"]
+>[number];
+
 export const skillsSchema = z.object({
   skills: z.array(z.string().trim()).optional(),
 });
@@ -84,6 +105,7 @@ export const resumeSchema = z.object({
   ...personalInfoSchema.shape,
   ...workExperienceSchema.shape,
   ...educationSchema.shape,
+  ...projectExperienceSchema.shape,
   ...skillsSchema.shape,
   ...summarySchema.shape,
   colorHex: optionalString,
@@ -107,10 +129,23 @@ export type GenerateWorkExperienceInput = z.infer<
   typeof generateWorkExperienceSchema
 >;
 
+export const generateProjectExperienceSchema = z.object({
+  description: z
+    .string()
+    .trim()
+    .min(1, "Required")
+    .min(20, "Must be at least 10 characters"),
+});
+
+export type GenerateProjectExperienceInput = z.infer<
+  typeof generateWorkExperienceSchema
+>;
+
 export const generateSummarySchema = z.object({
   jobTitle: optionalString,
   ...workExperienceSchema.shape,
   ...educationSchema.shape,
+  ...projectExperienceSchema.shape,
   ...skillsSchema.shape,
 });
 

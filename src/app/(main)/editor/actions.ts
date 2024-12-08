@@ -9,10 +9,13 @@ import path from "path";
 export async function saveResume(values: ResumeValues) {
   const { id } = values;
 
-  // console.log("received values", values);
-
-  const { photo, workExperiences, educations, ...resumeValues } =
-    resumeSchema.parse(values);
+  const {
+    photo,
+    workExperiences,
+    projectExperiences,
+    educations,
+    ...resumeValues
+  } = resumeSchema.parse(values);
 
   const { userId } = await auth();
 
@@ -63,6 +66,14 @@ export async function saveResume(values: ResumeValues) {
             endDate: exp.endDate ? new Date(exp.endDate) : undefined,
           })),
         },
+        projectExperiences: {
+          deleteMany: {},
+          create: projectExperiences?.map((exp) => ({
+            ...exp,
+            startDate: exp.startDate ? new Date(exp.startDate) : undefined,
+            endDate: exp.endDate ? new Date(exp.endDate) : undefined,
+          })),
+        },
         educations: {
           deleteMany: {},
           create: educations?.map((edu) => ({
@@ -82,6 +93,13 @@ export async function saveResume(values: ResumeValues) {
         photoUrl: newPhotoUrl,
         workExperiences: {
           create: workExperiences?.map((exp) => ({
+            ...exp,
+            startDate: exp.startDate ? new Date(exp.startDate) : undefined,
+            endDate: exp.endDate ? new Date(exp.endDate) : undefined,
+          })),
+        },
+        projectExperiences: {
+          create: projectExperiences?.map((exp) => ({
             ...exp,
             startDate: exp.startDate ? new Date(exp.startDate) : undefined,
             endDate: exp.endDate ? new Date(exp.endDate) : undefined,
