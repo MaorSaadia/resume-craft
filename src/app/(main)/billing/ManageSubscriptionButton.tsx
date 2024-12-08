@@ -15,10 +15,8 @@ export default function ManageSubscriptionButton() {
     try {
       setLoading(true);
       const redirectUrl = await createCustomerPortalSession();
-      console.log("manage: ", redirectUrl);
-      // Add null/undefined check before redirecting
       if (redirectUrl) {
-        window.location.href = redirectUrl;
+        window.open(redirectUrl, "_blank");
       } else {
         throw new Error("No redirect URL available");
       }

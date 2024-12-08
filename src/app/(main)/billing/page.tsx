@@ -39,6 +39,8 @@ export default async function Page() {
         subscription.lemonSqueezySubscriptionId,
       );
 
+      console.log(productData);
+
       productName = productData?.data.attributes.product_name || "Unnamed Plan";
     } catch (error) {
       console.error("Failed to retrieve product details:", error);

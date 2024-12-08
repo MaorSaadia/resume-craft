@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     const signature = req.headers.get("X-Signature") || "";
     const eventType = req.headers.get("X-Event-Name") || "";
 
-    // console.log(eventType);
+    console.log(eventType);
 
     // Signature Verification function
     function verifyWebhookSignature(
@@ -84,9 +84,15 @@ async function handleSubscriptionCreated(event: any) {
 async function handleSubscriptionUpdated(event: any) {
   const data = event.data;
 
+  console.log("Updated");
+  console.log(data.attributes.customer_id);
+  console.log(data.attributes.variant_id.toString());
+  console.log(data.attributes.renews_at);
+  console.log(data.attributes.cancelled);
+
   await prisma.userSubscription.update({
     where: {
-      lemonSqueezySubscriptionId: data.id,
+      lemonSqueezyCustomerId: data.attributes.customer_id.toString(),
     },
     data: {
       lemonSqueezyPriceId: data.attributes.variant_id.toString(),
@@ -99,9 +105,11 @@ async function handleSubscriptionUpdated(event: any) {
 async function handleSubscriptionCancelled(event: any) {
   const data = event.data;
 
+  console.log("Cancelled");
+
   await prisma.userSubscription.update({
     where: {
-      lemonSqueezySubscriptionId: data.id,
+      lemonSqueezyCustomerId: data.attributes.customer_id.toString(),
     },
     data: {
       lemonSqueezyCancelAtPeriodEnd: true,
