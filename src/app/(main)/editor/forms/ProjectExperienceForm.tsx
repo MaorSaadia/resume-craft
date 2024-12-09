@@ -128,7 +128,8 @@ export default function ProjectExperienceForm({
                   title: "",
                   technologies: "",
                   description: "",
-                  link: "",
+                  githubLink: "",
+                  websiteLink: "",
                 })
               }
             >
@@ -205,40 +206,6 @@ function ProjectExperienceItem({
       />
       <FormField
         control={form.control}
-        name={`projectExperiences.${index}.technologies`}
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>Technologies used</FormLabel>
-            <FormControl>
-              <Input {...field} placeholder="e.g. React, Node.js, AWS" />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-      <FormDescription>
-        Leave <span className="font-semibold">end date</span> empty if the
-        project is ongoing.
-      </FormDescription>
-      <FormField
-        control={form.control}
-        name={`projectExperiences.${index}.link`}
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>Project link (optional)</FormLabel>
-            <FormControl>
-              <Input
-                {...field}
-                type="url"
-                placeholder="https://github.com/username/project"
-              />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-      <FormField
-        control={form.control}
         name={`projectExperiences.${index}.description`}
         render={({ field }) => (
           <FormItem>
@@ -250,6 +217,55 @@ function ProjectExperienceItem({
           </FormItem>
         )}
       />
+      <FormField
+        control={form.control}
+        name={`projectExperiences.${index}.technologies`}
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Technologies used</FormLabel>
+            <FormControl>
+              <Input {...field} placeholder="e.g. React, Node.js, AWS" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <FormDescription></FormDescription>
+      <FormField
+        control={form.control}
+        name={`projectExperiences.${index}.websiteLink`}
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Website link (optional)</FormLabel>
+            <FormControl>
+              <Input
+                {...field}
+                type="url"
+                placeholder="https://websitename.com"
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name={`projectExperiences.${index}.githubLink`}
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>GitHub link (optional)</FormLabel>
+            <FormControl>
+              <Input
+                {...field}
+                type="url"
+                placeholder="https://github.com/username/project"
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+
       <Button variant="destructive" type="button" onClick={() => remove(index)}>
         Remove
       </Button>

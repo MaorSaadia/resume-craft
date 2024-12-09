@@ -14,28 +14,31 @@ datasource db {
 }
 
 model Resume {
-  id     String @id @default(cuid())
-  userId String
+  id            String @id @default(cuid())
+  userId        String
 
-  title       String?
-  description String?
+  title         String?
+  description   String?
 
-  photoUrl    String?
-  colorHex    String  @default("#000000")
-  borderStyle String  @default("squircle")
-  summary     String?
-  firstName   String?
-  lastName    String?
-  jobTitle    String?
-  city        String?
-  country     String?
-  phone       String?
-  email       String?
+  photoUrl      String?
+  colorHex      String  @default("#000000")
+  borderStyle   String  @default("squircle")
+  summary       String?
+  firstName     String?
+  lastName      String?
+  jobTitle      String?
+  city          String?
+  country       String?
+  phone         String?
+  email         String?
+  portfolioLink String?
+  linkedinLink  String?
+  githubLink    String?
 
-  workExperiences WorkExperience[]
-  educations      Education[]
-  projectExperiences ProjectExperience[] // Marked optional
-  skills          String[]
+  workExperiences    WorkExperience[]
+  educations         Education[]
+  projectExperiences ProjectExperience[] 
+  skills             String[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -84,7 +87,8 @@ model ProjectExperience {
   title         String?
   technologies  String?
   description   String?
-  link          String?
+  githubLink    String?
+  websiteLink    String?
 
   resumeId String
   resume   Resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)

@@ -7,7 +7,12 @@ import { BorderStyles } from "@/app/(main)/editor/BorderStyleButton";
 import { cn } from "@/lib/utils";
 import { ResumeValues } from "@/lib/validation";
 import { Badge } from "./ui/badge";
-import { FaGithub } from "react-icons/fa";
+import {
+  FaExternalLinkSquareAlt,
+  FaGithub,
+  FaGlobe,
+  FaLinkedin,
+} from "react-icons/fa";
 
 interface ResumePreviewProps {
   resumeData: ResumeValues;
@@ -44,7 +49,7 @@ export default function ResumePreview({
         <SummarySection resumeData={resumeData} />
         <WorkExperienceSection resumeData={resumeData} />
         <EducationSection resumeData={resumeData} />
-        <ProjectsSection resumeData={resumeData} /> {/* Add this line */}
+        <ProjectsSection resumeData={resumeData} />
         <SkillsSection resumeData={resumeData} />
       </div>
     </div>
@@ -67,6 +72,9 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
     email,
     colorHex,
     borderStyle,
+    portfolioLink,
+    linkedinLink,
+    githubLink,
   } = resumeData;
 
   const [photoSrc, setPhotoSrc] = useState(photo instanceof File ? "" : photo);
@@ -77,6 +85,34 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
     if (photo === null) setPhotoSrc("");
     return () => URL.revokeObjectURL(objectUrl);
   }, [photo]);
+
+  // Social link rendering helper
+  const SocialLink = ({
+    href,
+    icon: Icon,
+    label,
+  }: {
+    href?: string;
+    icon: React.ComponentType<{ size?: number; color?: string }>;
+    label: string;
+  }) => {
+    if (!href) return null;
+
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1.5 text-xs text-gray-600 transition-colors hover:text-black"
+        aria-label={label}
+      >
+        <Icon size={14} />
+        <span className="underline decoration-gray-300">
+          {new URL(href).hostname.replace("www.", "")}
+        </span>
+      </a>
+    );
+  };
 
   return (
     <div className="flex items-center gap-6">
@@ -123,11 +159,16 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
           {(city || country) && (phone || email) ? " • " : ""}
           {[phone, email].filter(Boolean).join(" • ")}
         </p>
+
+        <div className="mt-1.5 flex gap-3">
+          <SocialLink href={portfolioLink} icon={FaGlobe} label="Portfolio" />
+          <SocialLink href={linkedinLink} icon={FaLinkedin} label="LinkedIn" />
+          <SocialLink href={githubLink} icon={FaGithub} label="GitHub" />
+        </div>
       </div>
     </div>
   );
 }
-
 function SummarySection({ resumeData }: ResumeSectionProps) {
   const { summary, colorHex } = resumeData;
 
@@ -293,9 +334,19 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
                 {proj.title}
               </span>
               <div className="flex items-center gap-1.5">
-                {proj.link && (
+                {proj.websiteLink && (
                   <a
-                    href={proj.link}
+                    href={proj.websiteLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black"
+                  >
+                    <FaExternalLinkSquareAlt className="size-4" />
+                  </a>
+                )}
+                {proj.githubLink && (
+                  <a
+                    href={proj.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black"
@@ -305,14 +356,14 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
                 )}
               </div>
             </div>
+            <div className="whitespace-pre-line text-xs">
+              {proj.description}
+            </div>
             {proj.technologies && (
               <p className="text-xs font-medium text-gray-600">
                 Technologies: {proj.technologies}
               </p>
             )}
-            <div className="whitespace-pre-line text-xs">
-              {proj.description}
-            </div>
           </div>
         ))}
       </div>

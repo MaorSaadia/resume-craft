@@ -182,6 +182,59 @@ export default function PersonalInfoForm({
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name="portfolioLink"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Portfolio website (optional)</FormLabel>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="url"
+                    placeholder="https://yourportfolio.com"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="linkedinLink"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>LinkedIn profile (optional)</FormLabel>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="url"
+                    placeholder="https://linkedin.com/in/yourprofile"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="githubLink"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>GitHub profile (optional)</FormLabel>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="url"
+                    placeholder="https://github.com/yourusername"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </form>
       </Form>
     </div>
