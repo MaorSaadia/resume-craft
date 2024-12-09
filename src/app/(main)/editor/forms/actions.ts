@@ -149,8 +149,6 @@ export async function generateProjectExperience(
   Required format:
   Project name: <project name>
   Technologies used: <list of technologies>
-  Start date: <YYYY-MM-DD> (only if provided)
-  End date: <YYYY-MM-DD> (only if provided)
   Description: <an optimized description in bullet format, highlighting key achievements and technical details>
   
   Provide only the structured response.
@@ -170,8 +168,6 @@ export async function generateProjectExperience(
       description: (
         aiResponse.match(/Description:([\s\S]*)/)?.[1] || ""
       ).trim(),
-      startDate: aiResponse.match(/Start date: (\d{4}-\d{2}-\d{2})/)?.[1],
-      endDate: aiResponse.match(/End date: (\d{4}-\d{2}-\d{2})/)?.[1],
     } satisfies ProjectExperience;
   } catch (error) {
     console.error("Error generating project experience:", error);

@@ -83,8 +83,6 @@ model ProjectExperience {
 
   title         String?
   technologies  String?
-  startDate     DateTime?
-  endDate       DateTime?
   description   String?
   link          String?
 

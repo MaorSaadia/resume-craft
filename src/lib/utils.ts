@@ -48,8 +48,6 @@ export function mapToResumeValues(data: ResumeServerData): ResumeValues {
       title: exp.title || undefined,
       technologies: exp.technologies || undefined,
       description: exp.description || undefined,
-      startDate: exp.startDate?.toISOString().split("T")[0],
-      endDate: exp.endDate?.toISOString().split("T")[0],
       link: exp.link || undefined,
     })),
     skills: data.skills,

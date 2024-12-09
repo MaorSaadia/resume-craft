@@ -43,6 +43,7 @@ export default function ResumePreview({
         <SummarySection resumeData={resumeData} />
         <WorkExperienceSection resumeData={resumeData} />
         <EducationSection resumeData={resumeData} />
+        <ProjectsSection resumeData={resumeData} /> {/* Add this line */}
         <SkillsSection resumeData={resumeData} />
       </div>
     </div>
@@ -248,6 +249,67 @@ function EducationSection({ resumeData }: ResumeSectionProps) {
               )}
             </div>
             <p className="text-xs font-semibold">{edu.school}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function ProjectsSection({ resumeData }: ResumeSectionProps) {
+  const { projectExperiences, colorHex } = resumeData;
+
+  const projectsNotEmpty = projectExperiences?.filter(
+    (proj) => Object.values(proj).filter(Boolean).length > 0,
+  );
+
+  if (!projectsNotEmpty?.length) return null;
+
+  return (
+    <>
+      <hr
+        className="border-2"
+        style={{
+          borderColor: colorHex,
+        }}
+      />
+      <div className="space-y-3">
+        <p
+          className="text-lg font-semibold"
+          style={{
+            color: colorHex,
+          }}
+        >
+          Projects
+        </p>
+        {projectsNotEmpty.map((proj, index) => (
+          <div key={index} className="break-inside-avoid space-y-1">
+            <div
+              className="flex items-center justify-between text-sm font-semibold"
+              style={{
+                color: colorHex,
+              }}
+            >
+              <span>{proj.title}</span>
+            </div>
+            {proj.technologies && (
+              <p className="text-xs font-medium text-gray-600">
+                Technologies: {proj.technologies}
+              </p>
+            )}
+            {proj.link && (
+              <a
+                href={proj.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-blue-600 underline"
+              >
+                {proj.link}
+              </a>
+            )}
+            <div className="whitespace-pre-line text-xs">
+              {proj.description}
+            </div>
           </div>
         ))}
       </div>

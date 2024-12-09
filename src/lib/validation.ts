@@ -73,8 +73,6 @@ export const projectExperienceSchema = z.object({
       z.object({
         title: optionalString,
         technologies: optionalString,
-        startDate: optionalString,
-        endDate: optionalString,
         description: optionalString,
         link: optionalString,
       }),
