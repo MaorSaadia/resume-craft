@@ -7,6 +7,7 @@ import { BorderStyles } from "@/app/(main)/editor/BorderStyleButton";
 import { cn } from "@/lib/utils";
 import { ResumeValues } from "@/lib/validation";
 import { Badge } from "./ui/badge";
+import { FaGithub } from "react-icons/fa";
 
 interface ResumePreviewProps {
   resumeData: ResumeValues;
@@ -284,28 +285,30 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
         </p>
         {projectsNotEmpty.map((proj, index) => (
           <div key={index} className="break-inside-avoid space-y-1">
-            <div
-              className="flex items-center justify-between text-sm font-semibold"
-              style={{
-                color: colorHex,
-              }}
-            >
-              <span>{proj.title}</span>
+            <div className="flex items-center justify-between">
+              <span
+                className="text-sm font-semibold"
+                style={{ color: colorHex }}
+              >
+                {proj.title}
+              </span>
+              <div className="flex items-center gap-1.5">
+                {proj.link && (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black"
+                  >
+                    <FaGithub className="size-4" />
+                  </a>
+                )}
+              </div>
             </div>
             {proj.technologies && (
               <p className="text-xs font-medium text-gray-600">
                 Technologies: {proj.technologies}
               </p>
-            )}
-            {proj.link && (
-              <a
-                href={proj.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-blue-600 underline"
-              >
-                {proj.link}
-              </a>
             )}
             <div className="whitespace-pre-line text-xs">
               {proj.description}
