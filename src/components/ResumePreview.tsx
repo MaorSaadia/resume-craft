@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { formatDate } from "date-fns";
 
 import useDimensions from "@/hooks/useDimensions";
@@ -133,10 +133,10 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
           }}
         />
       )}
-      <div className="space-y-2.5">
+      <div className="space-y-1">
         <div className="space-y-1">
           <p
-            className="text-3xl font-bold"
+            className="font-serif text-4xl font-bold"
             style={{
               color: colorHex,
             }}
@@ -144,7 +144,7 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
             {firstName} {lastName}
           </p>
           <p
-            className="font-medium"
+            className="text-lg font-medium"
             style={{
               color: colorHex,
             }}
@@ -159,8 +159,7 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
           {(city || country) && (phone || email) ? " • " : ""}
           {[phone, email].filter(Boolean).join(" • ")}
         </p>
-
-        <div className="mt-1.5 flex gap-3">
+        <div className="flex gap-3">
           <SocialLink href={portfolioLink} icon={FaGlobe} label="Portfolio" />
           <SocialLink href={linkedinLink} icon={FaLinkedin} label="LinkedIn" />
           <SocialLink href={githubLink} icon={FaGithub} label="GitHub" />
@@ -175,25 +174,23 @@ function SummarySection({ resumeData }: ResumeSectionProps) {
   if (!summary) return null;
 
   return (
-    <>
+    <div className="space-y-2">
       <hr
-        className="border-2"
+        className="-mt-4 border-2"
         style={{
           borderColor: colorHex,
         }}
       />
-      <div className="break-inside-avoid space-y-3">
+      <div className="break-inside-avoid space-y-1">
         <p
           className="text-lg font-semibold"
           style={{
             color: colorHex,
           }}
-        >
-          Professional profile
-        </p>
+        ></p>
         <div className="whitespace-pre-line text-sm">{summary}</div>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -207,14 +204,14 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
   if (!workExperiencesNotEmpty?.length) return null;
 
   return (
-    <>
+    <div className="space-y-1">
       <hr
-        className="border-2"
+        className="-mt-4 border-2"
         style={{
           borderColor: colorHex,
         }}
       />
-      <div className="space-y-3">
+      <div className="space-y-1">
         <p
           className="text-lg font-semibold"
           style={{
@@ -224,7 +221,7 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
           Work experience
         </p>
         {workExperiencesNotEmpty.map((exp, index) => (
-          <div key={index} className="break-inside-avoid space-y-1">
+          <div key={index} className="break-inside-avoid -space-y-2">
             <div
               className="flex items-center justify-between text-sm font-semibold"
               style={{
@@ -244,7 +241,7 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
@@ -258,14 +255,14 @@ function EducationSection({ resumeData }: ResumeSectionProps) {
   if (!educationsNotEmpty?.length) return null;
 
   return (
-    <>
+    <div className="space-y-1">
       <hr
-        className="border-2"
+        className="-mt-4 border-2"
         style={{
           borderColor: colorHex,
         }}
       />
-      <div className="space-y-3">
+      <div className="space-y-1">
         <p
           className="text-lg font-semibold"
           style={{
@@ -294,7 +291,7 @@ function EducationSection({ resumeData }: ResumeSectionProps) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
@@ -308,14 +305,14 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
   if (!projectsNotEmpty?.length) return null;
 
   return (
-    <>
+    <div className="space-y-1">
       <hr
-        className="border-2"
+        className="-mt-4 border-2"
         style={{
           borderColor: colorHex,
         }}
       />
-      <div className="space-y-3">
+      <div className="space-y-1">
         <p
           className="text-lg font-semibold"
           style={{
@@ -341,7 +338,10 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black"
                   >
-                    <FaExternalLinkSquareAlt className="size-4" />
+                    <FaExternalLinkSquareAlt
+                      className="size-4"
+                      title="live website"
+                    />
                   </a>
                 )}
                 {proj.githubLink && (
@@ -351,7 +351,7 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black"
                   >
-                    <FaGithub className="size-4" />
+                    <FaGithub className="size-4" title="github repo" />
                   </a>
                 )}
               </div>
@@ -367,7 +367,7 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
@@ -377,9 +377,9 @@ function SkillsSection({ resumeData }: ResumeSectionProps) {
   if (!skills?.length) return null;
 
   return (
-    <>
+    <div className="space-y-1">
       <hr
-        className="border-2"
+        className="-mt-4 border-2"
         style={{
           borderColor: colorHex,
         }}
@@ -413,6 +413,6 @@ function SkillsSection({ resumeData }: ResumeSectionProps) {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }

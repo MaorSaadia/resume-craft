@@ -29,6 +29,9 @@ export default function PersonalInfoForm({
       country: resumeData.country || "",
       phone: resumeData.phone || "",
       email: resumeData.email || "",
+      portfolioLink: resumeData.portfolioLink || "",
+      linkedinLink: resumeData.linkedinLink || "",
+      githubLink: resumeData.githubLink || "",
     },
   });
 
