@@ -221,7 +221,7 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
           Work experience
         </p>
         {workExperiencesNotEmpty.map((exp, index) => (
-          <div key={index} className="break-inside-avoid -space-y-2">
+          <div key={index} className="break-inside-avoid">
             <div
               className="flex items-center justify-between text-sm font-semibold"
               style={{

@@ -97,7 +97,7 @@ export async function generateWorkExperience(
   Company: <company name>
   Start date: <YYYY-MM-DD> (only if provided)
   End date: <YYYY-MM-DD> (only if provided)
-  Description: <an optimized description in bullet format, might be infered from the job title>
+  Description: <an optimized description in bullet format like this •, might be infered from the job title>
   
   Provide only the structured response.
   `;
@@ -149,7 +149,7 @@ export async function generateProjectExperience(
   Required format:
   Project name: <project name>
   Technologies used: <list of technologies>
-  Description: <an optimized description in bullet format, highlighting key achievements and technical details>
+  Description: <an optimized description in bullet format like this •, highlighting key achievements and technical details>
   
   Provide only the structured response.
   `;
