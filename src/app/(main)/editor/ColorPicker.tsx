@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PaletteIcon } from "lucide-react";
-import { Color, ColorChangeHandler, TwitterPicker } from "react-color";
+import { CompactPicker, Color, ColorChangeHandler } from "react-color";
 
 import usePremiumModal from "@/hooks/usePremiumModal";
 import { canUseCustomizations } from "@/lib/permissions";
@@ -19,9 +19,7 @@ interface ColorPickerProps {
 
 export default function ColorPicker({ color, onChange }: ColorPickerProps) {
   const subscriptionLevel = useSubscriptionLevel();
-
   const premiumModal = usePremiumModal();
-
   const [showPopover, setShowPopover] = useState(false);
 
   return (
@@ -43,10 +41,10 @@ export default function ColorPicker({ color, onChange }: ColorPickerProps) {
         </Button>
       </PopoverTrigger>
       <PopoverContent
-        className="border-none bg-transparent shadow-none"
+        className="border-none bg-transparent shadow-none p-0 -mr-10"
         align="end"
       >
-        <TwitterPicker color={color} onChange={onChange} triangle="top-right" />
+        <CompactPicker color={color} onChange={onChange} />
       </PopoverContent>
     </Popover>
   );

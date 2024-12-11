@@ -16,16 +16,18 @@ export default function Navbar() {
   return (
     <header className="shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 p-3">
-        <Link href="/resumes" className="flex items-center gap-2">
+        <Link href="/resumes" className="flex items-center gap-3 group">
           <Image
             src={logo}
             alt="Logo"
-            width={40}
-            height={40}
+            width={45}
+            height={45}
             quality={100}
-            className="transition-all duration-300 ease-in-out"
+            className="transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="text-xl font-bold tracking-tight">Resume Craft</span>
+          {/* <span className="text-2xl font-semibold text-gray-800 dark:text-gray-200 tracking-tight group-hover:text-green-500 dark:group-hover:text-green-300 transition-colors">
+            Resume Craft
+          </span> */}
         </Link>
         <div className="flex items-center gap-3">
           <ThemeToggle />
