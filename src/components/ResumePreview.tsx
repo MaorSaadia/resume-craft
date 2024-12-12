@@ -7,13 +7,19 @@ import {
   FaGlobe,
   FaLinkedin,
 } from "react-icons/fa";
+import { franc } from "franc-all";
 
 import useDimensions from "@/hooks/useDimensions";
 import { BorderStyles } from "@/app/(main)/editor/BorderStyleButton";
 import { cn } from "@/lib/utils";
 import { ResumeValues } from "@/lib/validation";
 import { Badge } from "./ui/badge";
-import { franc } from "franc-all";
+import {
+  getEducationTranslation,
+  getWorkExperienceTranslation,
+  getProjectsTranslation,
+  getSkillsTranslation,
+} from "@/lib/translations";
 
 interface ResumePreviewProps {
   resumeData: ResumeValues;
@@ -145,7 +151,7 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
             className="font-serif text-4xl font-bold"
             style={{
               color: colorHex,
-              textAlign: textDirection === "rtl" ? "right" : "left", // Align text based on direction
+              textAlign: textDirection === "rtl" ? "right" : "left",
             }}
           >
             {firstName} {lastName}
@@ -154,7 +160,7 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
             className="text-lg font-medium"
             style={{
               color: colorHex,
-              textAlign: textDirection === "rtl" ? "right" : "left", // Align text based on direction
+              textAlign: textDirection === "rtl" ? "right" : "left",
             }}
           >
             {jobTitle}
@@ -216,9 +222,7 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
 
   if (!workExperiences || !workExperiencesNotEmpty?.length) return null;
 
-  const lang = franc(workExperiences[0]?.position, { minLength: 1 });
-
-  console.log(lang);
+  const lang = franc(workExperiences[0]?.position, { minLength: 4 });
 
   return (
     <div className="space-y-1" dir={textDirection}>
@@ -235,7 +239,7 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
             color: colorHex,
           }}
         >
-          {lang === "heb" ? "ניסיון תעסוקתי" : "Work experience"}
+          {getWorkExperienceTranslation(lang)}
         </p>
         {workExperiencesNotEmpty.map((exp, index) => (
           <div key={index} className="break-inside-avoid">
@@ -269,7 +273,9 @@ function EducationSection({ resumeData }: ResumeSectionProps) {
     (edu) => Object.values(edu).filter(Boolean).length > 0,
   );
 
-  if (!educationsNotEmpty?.length) return null;
+  if (!educations || !educationsNotEmpty?.length) return null;
+
+  const lang = franc(educations[0]?.degree, { minLength: 4 });
 
   return (
     <div className="space-y-1" dir={textDirection}>
@@ -286,7 +292,7 @@ function EducationSection({ resumeData }: ResumeSectionProps) {
             color: colorHex,
           }}
         >
-          Education
+          {getEducationTranslation(lang)}
         </p>
         {educationsNotEmpty.map((edu, index) => (
           <div key={index} className="break-inside-avoid space-y-1">
@@ -319,7 +325,9 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
     (proj) => Object.values(proj).filter(Boolean).length > 0,
   );
 
-  if (!projectsNotEmpty?.length) return null;
+  if (!projectExperiences || !projectsNotEmpty?.length) return null;
+
+  const lang = franc(projectExperiences[0]?.title, { minLength: 4 });
 
   return (
     <div className="space-y-1" dir={textDirection}>
@@ -336,7 +344,7 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
             color: colorHex,
           }}
         >
-          Projects
+          {getProjectsTranslation(lang)}
         </p>
         {projectsNotEmpty.map((proj, index) => (
           <div key={index} className="break-inside-avoid space-y-1">
@@ -389,9 +397,11 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
 }
 
 function SkillsSection({ resumeData }: ResumeSectionProps) {
-  const { skills, colorHex, borderStyle, textDirection } = resumeData;
+  const { skills, colorHex, borderStyle, textDirection, jobTitle } = resumeData;
 
-  if (!skills?.length) return null;
+  if (!skills || !skills?.length) return null;
+
+  const lang = franc(jobTitle, { minLength: 5 });
 
   return (
     <div className="space-y-1" dir={textDirection}>
@@ -408,7 +418,7 @@ function SkillsSection({ resumeData }: ResumeSectionProps) {
             color: colorHex,
           }}
         >
-          Skills
+          {getSkillsTranslation(lang)}
         </p>
         <div className="flex break-inside-avoid flex-wrap gap-2">
           {skills.map((skill, index) => (
