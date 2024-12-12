@@ -1,18 +1,19 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { formatDate } from "date-fns";
-
-import useDimensions from "@/hooks/useDimensions";
-import { BorderStyles } from "@/app/(main)/editor/BorderStyleButton";
-import { cn } from "@/lib/utils";
-import { ResumeValues } from "@/lib/validation";
-import { Badge } from "./ui/badge";
 import {
   FaExternalLinkSquareAlt,
   FaGithub,
   FaGlobe,
   FaLinkedin,
 } from "react-icons/fa";
+
+import useDimensions from "@/hooks/useDimensions";
+import { BorderStyles } from "@/app/(main)/editor/BorderStyleButton";
+import { cn } from "@/lib/utils";
+import { ResumeValues } from "@/lib/validation";
+import { Badge } from "./ui/badge";
+import { franc } from "franc-all";
 
 interface ResumePreviewProps {
   resumeData: ResumeValues;
@@ -28,6 +29,8 @@ export default function ResumePreview({
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { width } = useDimensions(containerRef);
+
+  franc("Alle menslike wesens word vry");
 
   return (
     <div
@@ -211,7 +214,11 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
     (exp) => Object.values(exp).filter(Boolean).length > 0,
   );
 
-  if (!workExperiencesNotEmpty?.length) return null;
+  if (!workExperiences || !workExperiencesNotEmpty?.length) return null;
+
+  const lang = franc(workExperiences[0]?.position, { minLength: 1 });
+
+  console.log(lang);
 
   return (
     <div className="space-y-1" dir={textDirection}>
@@ -228,7 +235,7 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
             color: colorHex,
           }}
         >
-          Work experience
+          {lang === "heb" ? "ניסיון תעסוקתי" : "Work experience"}
         </p>
         {workExperiencesNotEmpty.map((exp, index) => (
           <div key={index} className="break-inside-avoid">
