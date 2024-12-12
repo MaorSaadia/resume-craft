@@ -14,6 +14,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { EditorFormProps } from "@/lib/types";
 import { generalInfoSchema, GeneralInfoValues } from "@/lib/validation";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function GeneralInfoForm({
   resumeData,
@@ -24,6 +31,7 @@ export default function GeneralInfoForm({
     defaultValues: {
       title: resumeData.title || "",
       description: resumeData.description || "",
+      textDirection: resumeData.textDirection || "ltr",
     },
   });
 
@@ -70,6 +78,33 @@ export default function GeneralInfoForm({
                 </FormControl>
                 <FormDescription>
                   Describe what this resume is for.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="textDirection"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Text Direction</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select text direction" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="ltr">Left to Right (LTR)</SelectItem>
+                    <SelectItem value="rtl">Right to Left (RTL)</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormDescription>
+                  Choose the text direction for your resume
                 </FormDescription>
                 <FormMessage />
               </FormItem>
