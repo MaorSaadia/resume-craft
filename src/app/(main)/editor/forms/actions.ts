@@ -54,7 +54,7 @@ export async function generateSummary(input: GenerateSummaryInput) {
       .join("\n\n")}
     Skills: ${skills}
     
-    Instructions: Write a concise, professional summary focusing on key achievements and skills.
+    Instructions: Write a concise, professional summary focusing on key achievements and skills response with the same data language.
   `;
 
   try {
@@ -110,7 +110,6 @@ export async function generateWorkExperience(
       throw new Error("Failed to generate AI response");
     }
 
-    // Parsing logic similar to OpenAI version
     return {
       position: aiResponse.match(/Job title: (.*)/)?.[1] || "",
       company: aiResponse.match(/Company: (.*)/)?.[1] || "",

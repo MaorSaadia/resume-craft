@@ -75,6 +75,7 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
     portfolioLink,
     linkedinLink,
     githubLink,
+    textDirection,
   } = resumeData;
 
   const [photoSrc, setPhotoSrc] = useState(photo instanceof File ? "" : photo);
@@ -115,7 +116,9 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
   };
 
   return (
-    <div className="flex items-center gap-6">
+    <div
+      className={`flex items-center gap-6 ${textDirection === "rtl" ? "flex-row-reverse" : "flex-row"}`}
+    >
       {photoSrc && (
         <Image
           src={photoSrc}
@@ -133,12 +136,13 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
           }}
         />
       )}
-      <div className="space-y-1">
+      <div className="space-y-1" dir={textDirection}>
         <div className="space-y-1">
           <p
             className="font-serif text-4xl font-bold"
             style={{
               color: colorHex,
+              textAlign: textDirection === "rtl" ? "right" : "left", // Align text based on direction
             }}
           >
             {firstName} {lastName}
@@ -147,12 +151,16 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
             className="text-lg font-medium"
             style={{
               color: colorHex,
+              textAlign: textDirection === "rtl" ? "right" : "left", // Align text based on direction
             }}
           >
             {jobTitle}
           </p>
         </div>
-        <p className="text-xs text-gray-500">
+        <p
+          className="text-xs text-gray-500"
+          style={{ textAlign: textDirection === "rtl" ? "right" : "left" }}
+        >
           {city}
           {city && country ? ", " : ""}
           {country}
@@ -168,11 +176,11 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
     </div>
   );
 }
+
 function SummarySection({ resumeData }: ResumeSectionProps) {
   const { summary, colorHex, textDirection } = resumeData;
 
   if (!summary) return null;
-  console.log(textDirection);
   return (
     <div className="space-y-2">
       <hr
@@ -197,7 +205,7 @@ function SummarySection({ resumeData }: ResumeSectionProps) {
 }
 
 function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
-  const { workExperiences, colorHex } = resumeData;
+  const { workExperiences, colorHex, textDirection } = resumeData;
 
   const workExperiencesNotEmpty = workExperiences?.filter(
     (exp) => Object.values(exp).filter(Boolean).length > 0,
@@ -206,7 +214,7 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
   if (!workExperiencesNotEmpty?.length) return null;
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-1" dir={textDirection}>
       <hr
         className="-mt-4 border-2"
         style={{
@@ -248,7 +256,7 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
 }
 
 function EducationSection({ resumeData }: ResumeSectionProps) {
-  const { educations, colorHex } = resumeData;
+  const { educations, colorHex, textDirection } = resumeData;
 
   const educationsNotEmpty = educations?.filter(
     (edu) => Object.values(edu).filter(Boolean).length > 0,
@@ -257,7 +265,7 @@ function EducationSection({ resumeData }: ResumeSectionProps) {
   if (!educationsNotEmpty?.length) return null;
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-1" dir={textDirection}>
       <hr
         className="-mt-4 border-2"
         style={{
@@ -298,7 +306,7 @@ function EducationSection({ resumeData }: ResumeSectionProps) {
 }
 
 function ProjectsSection({ resumeData }: ResumeSectionProps) {
-  const { projectExperiences, colorHex } = resumeData;
+  const { projectExperiences, colorHex, textDirection } = resumeData;
 
   const projectsNotEmpty = projectExperiences?.filter(
     (proj) => Object.values(proj).filter(Boolean).length > 0,
@@ -307,7 +315,7 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
   if (!projectsNotEmpty?.length) return null;
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-1" dir={textDirection}>
       <hr
         className="-mt-4 border-2"
         style={{
@@ -362,7 +370,7 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
               {proj.description}
             </div>
             {proj.technologies && (
-              <p className="text-xs font-medium text-gray-600">
+              <p className="text-xs font-medium text-gray-600 ">
                 Technologies: {proj.technologies}
               </p>
             )}
@@ -374,12 +382,12 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
 }
 
 function SkillsSection({ resumeData }: ResumeSectionProps) {
-  const { skills, colorHex, borderStyle } = resumeData;
+  const { skills, colorHex, borderStyle, textDirection } = resumeData;
 
   if (!skills?.length) return null;
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-1" dir={textDirection}>
       <hr
         className="-mt-4 border-2"
         style={{
