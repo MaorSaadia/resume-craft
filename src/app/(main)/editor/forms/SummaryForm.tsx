@@ -55,6 +55,7 @@ export default function SummaryForm({
                   <Textarea
                     {...field}
                     placeholder="A brief, engaging text about yourself"
+                    style={{ minHeight: "120px" }}
                   />
                 </FormControl>
                 <FormMessage />

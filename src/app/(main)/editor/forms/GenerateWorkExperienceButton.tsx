@@ -127,6 +127,7 @@ function InputDialog({
                     <Textarea
                       {...field}
                       placeholder={`E.g. "from nov 2019 to dec 2020 I worked at google as a software engineer, tasks were: ...`}
+                      style={{ minHeight: "120px" }}
                       autoFocus
                     />
                   </FormControl>

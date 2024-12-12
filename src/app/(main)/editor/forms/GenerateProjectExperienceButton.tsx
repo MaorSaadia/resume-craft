@@ -127,6 +127,7 @@ function InputDialog({
                     <Textarea
                       {...field}
                       placeholder={`E.g. "I developed a full-stack e-commerce website using React and Node.js, implemented authentication, payment integration, and deployed on AWS"`}
+                      style={{ minHeight: "120px" }}
                       autoFocus
                     />
                   </FormControl>

@@ -60,6 +60,7 @@ export default function SkillsForm({
                   <Textarea
                     {...field}
                     placeholder="e.g. React.js, Node.js, graphic design, ..."
+                    style={{ minHeight: "120px" }}
                     onChange={(e) => {
                       const skills = e.target.value.split(",");
                       field.onChange(skills);

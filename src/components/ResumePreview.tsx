@@ -169,10 +169,10 @@ function PersonalInfoHeader({ resumeData }: ResumeSectionProps) {
   );
 }
 function SummarySection({ resumeData }: ResumeSectionProps) {
-  const { summary, colorHex } = resumeData;
+  const { summary, colorHex, textDirection } = resumeData;
 
   if (!summary) return null;
-
+  console.log(textDirection);
   return (
     <div className="space-y-2">
       <hr
@@ -181,14 +181,16 @@ function SummarySection({ resumeData }: ResumeSectionProps) {
           borderColor: colorHex,
         }}
       />
-      <div className="break-inside-avoid space-y-1">
+      <div className="break-inside-avoid space-y-1" dir={textDirection}>
         <p
           className="text-lg font-semibold"
           style={{
             color: colorHex,
           }}
         ></p>
-        <div className="whitespace-pre-line text-sm">{summary}</div>
+        <div className={`whitespace-pre-line text-sm ${textDirection}`}>
+          {summary}
+        </div>
       </div>
     </div>
   );

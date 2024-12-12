@@ -259,7 +259,7 @@ function WorkExperienceItem({
           <FormItem>
             <FormLabel>Description</FormLabel>
             <FormControl>
-              <Textarea {...field} />
+              <Textarea {...field} style={{ minHeight: "120px" }} />
             </FormControl>
             <FormMessage />
           </FormItem>
