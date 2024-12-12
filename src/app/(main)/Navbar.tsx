@@ -14,7 +14,7 @@ export default function Navbar() {
   const { resolvedTheme } = useTheme();
 
   return (
-    <header className="shadow-sm">
+    <header className="shadow-sm border-b border-green-500">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 p-3">
         <Link href="/resumes" className="flex items-center gap-3 group">
           <Image
