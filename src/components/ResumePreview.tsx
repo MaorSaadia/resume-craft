@@ -20,6 +20,8 @@ import {
   getProjectsTranslation,
   getSkillsTranslation,
   getTechnologies,
+  getLanguages,
+  getLanguagesProficiency,
 } from "@/lib/translations";
 
 interface ResumePreviewProps {
@@ -61,6 +63,7 @@ export default function ResumePreview({
         <EducationSection resumeData={resumeData} />
         <ProjectsSection resumeData={resumeData} />
         <SkillsSection resumeData={resumeData} />
+        <LanguagesSection resumeData={resumeData} />
       </div>
     </div>
   );
@@ -438,6 +441,68 @@ function SkillsSection({ resumeData }: ResumeSectionProps) {
             >
               {skill}
             </Badge>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LanguagesSection({ resumeData }: ResumeSectionProps) {
+  const { languages, colorHex, borderStyle, textDirection } = resumeData;
+
+  const languagesNotEmpty = languages?.filter(
+    (lang) => lang.name && lang.name.trim() !== "",
+  );
+
+  if (!languages || !languagesNotEmpty?.length) return null;
+
+  // Use the first language name to detect language for translation
+  const lang = franc(languagesNotEmpty[0].name, { minLength: 4 });
+
+  return (
+    <div className="space-y-1" dir={textDirection}>
+      <hr
+        className="-mt-4 border-2"
+        style={{
+          borderColor: colorHex,
+        }}
+      />
+      <div className="break-inside-avoid space-y-3">
+        <p
+          className="text-lg font-semibold"
+          style={{
+            color: colorHex,
+          }}
+        >
+          {getLanguages(lang)}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {languagesNotEmpty.map((language, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-1.5 text-xs font-medium text-gray-700 bg-gray-100 px-2 py-1"
+              style={{
+                backgroundColor: `${colorHex}10`,
+                color: colorHex,
+                borderRadius:
+                  borderStyle === BorderStyles.SQUARE
+                    ? "0px"
+                    : borderStyle === BorderStyles.CIRCLE
+                      ? "9999px"
+                      : "8px",
+              }}
+            >
+              <span>{language.name}</span>
+              {language.proficiency && (
+                <span className="text-xs text-gray-500 opacity-70">
+                  {getLanguagesProficiency(
+                    lang,
+                    language.proficiency.toLowerCase(),
+                  )}
+                </span>
+              )}
+            </div>
           ))}
         </div>
       </div>

@@ -91,7 +91,7 @@ model ProjectExperience {
   technologies  String?
   description   String?
   githubLink    String?
-  websiteLink    String?
+  websiteLink   String?
 
   resumeId String
   resume   Resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)

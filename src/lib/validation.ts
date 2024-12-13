@@ -124,7 +124,7 @@ export const resumeSchema = z.object({
   ...projectExperienceSchema.shape,
   ...skillsSchema.shape,
   ...summarySchema.shape,
-  ...languageSchema.shape, // Add the new languages schema
+  ...languageSchema.shape,
   colorHex: optionalString,
   borderStyle: optionalString,
 });

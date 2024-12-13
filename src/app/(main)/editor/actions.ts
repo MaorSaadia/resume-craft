@@ -14,6 +14,7 @@ export async function saveResume(values: ResumeValues) {
     workExperiences,
     projectExperiences,
     educations,
+    languages, // Add languages destructuring
     ...resumeValues
   } = resumeSchema.parse(values);
 
@@ -80,6 +81,12 @@ export async function saveResume(values: ResumeValues) {
             endDate: edu.endDate ? new Date(edu.endDate) : undefined,
           })),
         },
+        languages: {
+          deleteMany: {},
+          create: languages?.map((lang) => ({
+            ...lang,
+          })),
+        },
         updatedAt: new Date(),
       },
     });
@@ -106,6 +113,11 @@ export async function saveResume(values: ResumeValues) {
             ...edu,
             startDate: edu.startDate ? new Date(edu.startDate) : undefined,
             endDate: edu.endDate ? new Date(edu.endDate) : undefined,
+          })),
+        },
+        languages: {
+          create: languages?.map((lang) => ({
+            ...lang,
           })),
         },
       },

@@ -233,6 +233,84 @@ export function getProjectsTranslation(lang: string): string {
   return projectsTranslations[lang] || projectsTranslations["eng"];
 }
 
+export const technologiesTranslations: Record<string, string> = {
+  eng: "Technologies",
+  heb: "טכנולוגיות",
+  cmn: "技术", // Mandarin Chinese
+  spa: "Tecnologías", // Spanish
+  rus: "Технологии", // Russian
+  arb: "التقنيات", // Standard Arabic
+  ben: "প্রযুক্তি", // Bengali
+  hin: "प्रौद्योगिकियां", // Hindi
+  por: "Tecnologias", // Portuguese
+  ind: "Teknologi", // Indonesian
+  jpn: "テクノロジー", // Japanese
+  fra: "Technologies", // French
+  deu: "Technologien", // German
+  jav: "Teknologi", // Javanese
+  kor: "기술", // Korean
+  tel: "సాంకేతికతలు", // Telugu
+  vie: "Công nghệ", // Vietnamese
+  mar: "तंत्रज्ञान", // Marathi
+  ita: "Tecnologie", // Italian
+  tam: "தொழில்நுட்பங்கள்", // Tamil
+  tur: "Teknolojiler", // Turkish
+  urd: "ٹیکنالوجیز", // Urdu
+  guj: "ટેક્નોલોજી", // Gujarati
+  pol: "Technologie", // Polish
+  ukr: "Технології", // Ukrainian
+  kan: "ತಂತ್ರಜ್ಞಾನಗಳು", // Kannada
+  mai: "प्रौद्योगिकियां", // Maithili
+  mal: "സാങ്കേതികവിദ്യകൾ", // Malayalam
+  pes: "فناوری‌ها", // Iranian Persian
+  mya: "နည်းပညာများ", // Burmese
+  swh: "Teknolojia", // Swahili
+  sun: "Teknologi", // Sundanese
+  ron: "Tehnologii", // Romanian
+  pan: "ਤਕਨਾਲੋਜੀ", // Panjabi
+  bho: "प्रौद्योगिकियां", // Bhojpuri
+  amh: "ቴክኖሎጂዎች", // Amharic
+  hau: "Fasahar zamani", // Hausa
+  fuv: "Fasahar zamani", // Nigerian Fulfulde
+  bos: "Tehnologije", // Bosnian
+  hrv: "Tehnologije", // Croatian
+  nld: "Technologieën", // Dutch
+  srp: "Технологије", // Serbian (Cyrillic)
+  tha: "เทคโนโลยี", // Thai
+  ckb: "تێکنەلۆژیاکان", // Central Kurdish
+  yor: "Awọn imọ-ẹrọ", // Yoruba
+  uzn: "Texnologiyalar", // Northern Uzbek
+  zlm: "Teknologi", // Malay
+  ibo: "Teknụzụ", // Igbo
+  npi: "प्रविधिहरू", // Nepali
+  ceb: "Teknolohiya", // Cebuano
+  skr: "ٹیکنالوجیز", // Saraiki
+  tgl: "Teknolohiya", // Tagalog
+  hun: "Technológiák", // Hungarian
+  azj: "Texnologiyalar", // North Azerbaijani
+  sin: "තාක්ෂණ", // Sinhala
+  ell: "Τεχνολογίες", // Modern Greek
+  ces: "Technologie", // Czech
+  mag: "प्रौद्योगिकी", // Magahi
+  run: "Ikoranabuhanga", // Rundi
+  bel: "Тэхналогіі", // Belarusian
+  plt: "Teknolojia", // Plateau Malagasy
+  nya: "Zaukadaulo", // Nyanja
+  pbu: "ټکنالوژۍ", // Northern Pashto
+  kin: "Ikoranabuhanga", // Kinyarwanda
+  zul: "Ubuchwepheshe", // Zulu
+  bul: "Технологии", // Bulgarian
+  swe: "Teknologier", // Swedish
+  lin: "Bilanga ya teknoloji", // Lingala
+  som: "Tiknoolajiyada", // Somali
+  ilo: "Teknolohiya", // Iloko
+  kaz: "Технологиялар", // Kazakh
+};
+
+export function getTechnologies(lang: string): string {
+  return technologiesTranslations[lang] || technologiesTranslations["eng"];
+}
+
 export const skillsTranslations: Record<string, string> = {
   eng: "Skills",
   heb: "כישורים",
@@ -311,80 +389,386 @@ export function getSkillsTranslation(lang: string): string {
   return skillsTranslations[lang] || skillsTranslations["eng"];
 }
 
-export const technologiesTranslations: Record<string, string> = {
-  eng: "Technologies",
-  heb: "טכנולוגיות",
-  cmn: "技术", // Mandarin Chinese
-  spa: "Tecnologías", // Spanish
-  rus: "Технологии", // Russian
-  arb: "التقنيات", // Standard Arabic
-  ben: "প্রযুক্তি", // Bengali
-  hin: "प्रौद्योगिकियां", // Hindi
-  por: "Tecnologias", // Portuguese
-  ind: "Teknologi", // Indonesian
-  jpn: "テクノロジー", // Japanese
-  fra: "Technologies", // French
-  deu: "Technologien", // German
-  jav: "Teknologi", // Javanese
-  kor: "기술", // Korean
-  tel: "సాంకేతికతలు", // Telugu
-  vie: "Công nghệ", // Vietnamese
-  mar: "तंत्रज्ञान", // Marathi
-  ita: "Tecnologie", // Italian
-  tam: "தொழில்நுட்பங்கள்", // Tamil
-  tur: "Teknolojiler", // Turkish
-  urd: "ٹیکنالوجیز", // Urdu
-  guj: "ટેક્નોલોજી", // Gujarati
-  pol: "Technologie", // Polish
-  ukr: "Технології", // Ukrainian
-  kan: "ತಂತ್ರಜ್ಞಾನಗಳು", // Kannada
-  mai: "प्रौद्योगिकियां", // Maithili
-  mal: "സാങ്കേതികവിദ്യകൾ", // Malayalam
-  pes: "فناوری‌ها", // Iranian Persian
-  mya: "နည်းပညာများ", // Burmese
-  swh: "Teknolojia", // Swahili
-  sun: "Teknologi", // Sundanese
-  ron: "Tehnologii", // Romanian
-  pan: "ਤਕਨਾਲੋਜੀ", // Panjabi
-  bho: "प्रौद्योगिकियां", // Bhojpuri
-  amh: "ቴክኖሎጂዎች", // Amharic
-  hau: "Fasahar zamani", // Hausa
-  fuv: "Fasahar zamani", // Nigerian Fulfulde
-  bos: "Tehnologije", // Bosnian
-  hrv: "Tehnologije", // Croatian
-  nld: "Technologieën", // Dutch
-  srp: "Технологије", // Serbian (Cyrillic)
-  tha: "เทคโนโลยี", // Thai
-  ckb: "تێکنەلۆژیاکان", // Central Kurdish
-  yor: "Awọn imọ-ẹrọ", // Yoruba
-  uzn: "Texnologiyalar", // Northern Uzbek
-  zlm: "Teknologi", // Malay
-  ibo: "Teknụzụ", // Igbo
-  npi: "प्रविधिहरू", // Nepali
-  ceb: "Teknolohiya", // Cebuano
-  skr: "ٹیکنالوجیز", // Saraiki
-  tgl: "Teknolohiya", // Tagalog
-  hun: "Technológiák", // Hungarian
-  azj: "Texnologiyalar", // North Azerbaijani
-  sin: "තාක්ෂණ", // Sinhala
-  ell: "Τεχνολογίες", // Modern Greek
-  ces: "Technologie", // Czech
-  mag: "प्रौद्योगिकी", // Magahi
-  run: "Ikoranabuhanga", // Rundi
-  bel: "Тэхналогіі", // Belarusian
-  plt: "Teknolojia", // Plateau Malagasy
-  nya: "Zaukadaulo", // Nyanja
-  pbu: "ټکنالوژۍ", // Northern Pashto
-  kin: "Ikoranabuhanga", // Kinyarwanda
-  zul: "Ubuchwepheshe", // Zulu
-  bul: "Технологии", // Bulgarian
-  swe: "Teknologier", // Swedish
-  lin: "Bilanga ya teknoloji", // Lingala
-  som: "Tiknoolajiyada", // Somali
-  ilo: "Teknolohiya", // Iloko
-  kaz: "Технологиялар", // Kazakh
+export const languagesTranslations: Record<string, string> = {
+  eng: "Languages",
+  heb: "שפות",
+  cmn: "语言", // Mandarin Chinese
+  spa: "Idiomas", // Spanish
+  rus: "Языки", // Russian
+  arb: "اللغات", // Standard Arabic
+  ben: "ভাষাসমূহ", // Bengali
+  hin: "भाषाएँ", // Hindi
+  por: "Idiomas", // Portuguese
+  ind: "Bahasa", // Indonesian
+  jpn: "言語", // Japanese
+  fra: "Langues", // French
+  deu: "Sprachen", // German
+  jav: "Basa", // Javanese
+  kor: "언어", // Korean
+  tel: "భాషలు", // Telugu
+  vie: "Ngôn ngữ", // Vietnamese
+  mar: "भाषा", // Marathi
+  ita: "Lingue", // Italian
+  tam: "மொழிகள்", // Tamil
+  tur: "Diller", // Turkish
+  urd: "زبانیں", // Urdu
+  guj: "ભાષાઓ", // Gujarati
+  pol: "Języki", // Polish
+  ukr: "Мови", // Ukrainian
+  kan: "ಭಾಷೆಗಳು", // Kannada
+  mai: "भाषाहरू", // Maithili
+  mal: "ഭാഷകൾ", // Malayalam
+  pes: "زبان‌ها", // Iranian Persian
+  mya: "ဘာသာစကားများ", // Burmese
+  swh: "Lugha", // Swahili
+  sun: "Basa", // Sundanese
+  ron: "Limbaje", // Romanian
+  pan: "ਭਾਸ਼ਾਵਾਂ", // Panjabi
+  bho: "भाषाएँ", // Bhojpuri
+  amh: "ቋንቋዎች", // Amharic
+  hau: "Harshe", // Hausa
+  fuv: "Harshe", // Nigerian Fulfulde
+  bos: "Jezici", // Bosnian
+  hrv: "Jezici", // Croatian
+  nld: "Talen", // Dutch
+  srp: "Језици", // Serbian (Cyrillic)
+  tha: "ภาษา", // Thai
+  ckb: "زمانەکان", // Central Kurdish
+  yor: "Ede", // Yoruba
+  uzn: "Tillar", // Northern Uzbek
+  zlm: "Bahasa", // Malay
+  ibo: "Asụsụ", // Igbo
+  npi: "भाषाहरू", // Nepali
+  ceb: "Mga Wika", // Cebuano
+  skr: "زبانیں", // Saraiki
+  tgl: "Mga Wika", // Tagalog
+  hun: "Nyelvek", // Hungarian
+  azj: "Dillər", // North Azerbaijani
+  sin: "භාෂා", // Sinhala
+  ell: "Γλώσσες", // Modern Greek
+  ces: "Jazyky", // Czech
+  mag: "भाषाहरू", // Magahi
+  run: "Indimi z'ururimi", // Rundi
+  bel: "Мовы", // Belarusian
+  plt: "Fiteny", // Plateau Malagasy
+  nya: "Chilankhulo", // Nyanja
+  pbu: "ژبانې", // Northern Pashto
+  kin: "Indimi", // Kinyarwanda
+  zul: "Izilimi", // Zulu
+  bul: "Езици", // Bulgarian
+  swe: "Språk", // Swedish
+  lin: "Lémbá ya misala", // Lingala
+  som: "Lugho", // Somali
+  ilo: "Lengguahe", // Iloko
+  kaz: "Тілдер", // Kazakh
 };
 
-export function getTechnologies(lang: string): string {
-  return technologiesTranslations[lang] || technologiesTranslations["eng"];
+export function getLanguages(lang: string): string {
+  return languagesTranslations[lang] || languagesTranslations["eng"];
 }
+
+export function getLanguagesProficiency(
+  lang: string,
+  proficiency: string,
+): string {
+  console.log(lang, proficiency); // For debugging
+  return (
+    languageProficiencyTranslations[proficiency]?.[lang] ||
+    languageProficiencyTranslations[proficiency]?.["eng"]
+  );
+}
+
+export const languageProficiencyTranslations: Record<
+  string,
+  Record<string, string>
+> = {
+  native: {
+    eng: "Native",
+    heb: "שפת אם",
+    cmn: "母语", // Mandarin Chinese
+    spa: "Nativo", // Spanish
+    rus: "Родной", // Russian
+    arb: "اللغة الأم", // Standard Arabic
+    ben: "মাতৃভাষা", // Bengali
+    hin: "मूल भाषा", // Hindi
+    por: "Nativo", // Portuguese
+    ind: "Asli", // Indonesian
+    jpn: "母国語", // Japanese
+    fra: "Langue maternelle", // French
+    deu: "Muttersprache", // German
+    jav: "Basa ibu", // Javanese
+    kor: "모국어", // Korean
+    tel: "మాతృభాష", // Telugu
+    vie: "Ngôn ngữ mẹ đẻ", // Vietnamese
+    mar: "मूल भाषा", // Marathi
+    ita: "Madrelingua", // Italian
+    tam: "தாய்மொழி", // Tamil
+    tur: "Ana dil", // Turkish
+    urd: "مادری زبان", // Urdu
+    guj: "જન્મભાષા", // Gujarati
+    pol: "Język ojczysty", // Polish
+    ukr: "Рідна мова", // Ukrainian
+    kan: "ಮಾತೃಭಾಷೆ", // Kannada
+    mai: "मातृभाषा", // Maithili
+    mal: "മാതൃഭാഷ", // Malayalam
+    pes: "زبان مادری", // Iranian Persian
+    mya: "မိခင်ဘာသာစကား", // Burmese
+    swh: "Lugha ya asili", // Swahili
+    sun: "Basa indung", // Sundanese
+    ron: "Limba maternă", // Romanian
+    pan: "ਮਾਤਰੀ ਭਾਸ਼ਾ", // Panjabi
+    bho: "मूल भाषा", // Bhojpuri
+    amh: "ትውልድ ቋንቋ", // Amharic
+    hau: "Harshe na haihuwa", // Hausa
+    fuv: "Harshe na haɓaka", // Nigerian Fulfulde
+    bos: "Materinji jezik", // Bosnian
+    hrv: "Materinji jezik", // Croatian
+    nld: "Moedertaal", // Dutch
+    srp: "Мајчин језик", // Serbian (Cyrillic)
+    tha: "ภาษาแม่", // Thai
+    ckb: "زبانى ژەنەرە", // Central Kurdish
+    yor: "Ede ibile", // Yoruba
+    uzn: "Ona tili", // Northern Uzbek
+    zlm: "Bahasa ibu", // Malay
+    ibo: "Asụsụ nne", // Igbo
+    npi: "मातृभाषा", // Nepali
+    ceb: "Inahan nga sinultian", // Cebuano
+    skr: "مادری زبان", // Saraiki
+    tgl: "Inang wika", // Tagalog
+    hun: "Anyanyelv", // Hungarian
+    azj: "Ana dili", // North Azerbaijani
+    sin: "පාරිභෝගික භාෂාව", // Sinhala
+    ell: "Μητρική γλώσσα", // Modern Greek
+    ces: "Mateřský jazyk", // Czech
+    mag: "मातृभाषा", // Magahi
+    run: "Ururimi rw'amavuko", // Rundi
+    bel: "Родная мова", // Belarusian
+    plt: "Fiteny natoraly", // Plateau Malagasy
+    nya: "Chilankhulo chachibale", // Nyanja
+    pbu: "ژبەی زەهەری", // Northern Pashto
+    kin: "Ururimi rw'ikirundi", // Kinyarwanda
+    zul: "Izilimi zomdabu", // Zulu
+    bul: "Роден език", // Bulgarian
+    swe: "Modersmål", // Swedish
+    lin: "Língua ya mibu", // Lingala
+    som: "Lugha ya asili", // Somali
+    ilo: "Inang a lengguahe", // Iloko
+    kaz: "Туған тіл", // Kazakh
+  },
+  fluent: {
+    eng: "Fluent",
+    heb: "חלק", // Fluent in Hebrew (meaning smooth/flowing)
+    cmn: "流利", // Mandarin Chinese
+    spa: "Fluido", // Spanish (Fluent)
+    rus: "Свободно", // Russian (Freely/Fluently)
+    arb: "بطلاقة", // Arabic (Fluently)
+    ben: "সুসম্বদ্ধ", // Bengali (Fluent)
+    hin: "धाराप्रवाह", // Hindi (Fluent)
+    por: "Fluente", // Portuguese
+    ind: "Lancar", // Indonesian (Fluent)
+    jpn: "流暢", // Japanese (Fluent)
+    fra: "Courant", // French (Fluent)
+    deu: "Fließend", // German (Fluent)
+    jav: "Lancar", // Javanese (Fluent)
+    kor: "유창한", // Korean (Fluent)
+    tel: "నిష్ణాత", // Telugu (Fluent)
+    vie: "Lưu loát", // Vietnamese (Fluent)
+    mar: "धाराप्रवाह", // Marathi (Fluent)
+    ita: "Fluente", // Italian
+    tam: "பாராட்டத்திற்குரிய", // Tamil (Fluent)
+    tur: "Akıcı", // Turkish (Fluent)
+    urd: "مفصل", // Urdu (Fluent)
+    guj: "પ્રવાહિત", // Gujarati (Fluent)
+    pol: "Biegły", // Polish (Fluent)
+    ukr: "Свободно", // Ukrainian (Fluently)
+    kan: "ನಿಭಾಯಿಸಿದ", // Kannada (Fluent)
+    mai: "धाराप्रवाह", // Maithili (Fluent)
+    mal: "സൂക്ഷ്മമായ", // Malayalam (Fluent)
+    pes: "جاری", // Iranian Persian (Fluent)
+    mya: "ကျွမ်းကျင်", // Burmese (Fluent)
+    swh: "Ufanisi", // Swahili (Fluent)
+    sun: "Lancar", // Sundanese (Fluent)
+    ron: "Fluent", // Romanian
+    pan: "ਧਾਰਾਵਾਹਿਕ", // Panjabi (Fluent)
+    bho: "धाराप्रवाह", // Bhojpuri (Fluent)
+    amh: "በሚሰማው", // Amharic (Fluent)
+    hau: "Harshe mai launin", // Hausa (Fluent)
+    fuv: "Harshe mai haske", // Nigerian Fulfulde (Fluent)
+    bos: "Tečan", // Bosnian (Fluent)
+    hrv: "Tečan", // Croatian (Fluent)
+    nld: "Vloeiend", // Dutch (Fluent)
+    srp: "Течан", // Serbian (Cyrillic) (Fluent)
+    tha: "คล่องแคล่ว", // Thai (Fluent)
+    ckb: "بەختیارە", // Kurdish (Fluent)
+    yor: "Alakalẹ", // Yoruba (Fluent)
+    uzn: "Oqil", // Uzbek (Fluent)
+    zlm: "Lancar", // Malay (Fluent)
+    ibo: "Ọlụrụọma", // Igbo (Fluent)
+    npi: "धाराप्रवाह", // Nepali (Fluent)
+    ceb: "Daghang Sinultian", // Cebuano (Fluent)
+    skr: "مفصل", // Saraiki (Fluent)
+    tgl: "Matatas", // Tagalog (Fluent)
+    hun: "Folyékony", // Hungarian (Fluent)
+    azj: "Səlis", // Azerbaijani (Fluent)
+    sin: "චුටි", // Sinhala (Fluent)
+    ell: "Ροή", // Greek (Fluent)
+    ces: "Plynulý", // Czech (Fluent)
+    mag: "धाराप्रवाह", // Magahi (Fluent)
+    run: "Izoboka", // Rundi (Fluent)
+    bel: "Свободны", // Belarusian (Fluent)
+    plt: "Fluent", // Malagasy (Fluent)
+    nya: "Wopanga", // Nyanja (Fluent)
+    pbu: "روان", // Pashto (Fluent)
+    kin: "Izwi", // Kinyarwanda (Fluent)
+    zul: "Olungele", // Zulu (Fluent)
+    bul: "Свободен език", // Bulgarian (Fluent)
+    swe: "Flytande", // Swedish (Fluent)
+    lin: "Mibengaleli", // Lingala (Fluent)
+    som: "Lugha isixhumi", // Somali (Fluent)
+    ilo: "Adalinga", // Iloko (Fluent)
+  },
+  intermediate: {
+    eng: "Intermediate",
+    heb: "בינוני",
+    cmn: "中级", // Mandarin Chinese
+    spa: "Intermedio", // Spanish
+    rus: "Средний", // Russian
+    arb: "متوسط", // Standard Arabic
+    ben: "মাঝারি", // Bengali
+    hin: "मध्यम", // Hindi
+    por: "Intermediário", // Portuguese
+    ind: "Menengah", // Indonesian
+    jpn: "中級", // Japanese
+    fra: "Intermédiaire", // French
+    deu: "Mittelstufe", // German
+    jav: "Sedheng", // Javanese
+    kor: "중급", // Korean
+    tel: "మధ్యస్థాయిగా", // Telugu
+    vie: "Trung cấp", // Vietnamese
+    mar: "मध्यम", // Marathi
+    ita: "Intermedio", // Italian
+    tam: "மத்திய", // Tamil
+    tur: "Orta", // Turkish
+    urd: "درمیانہ", // Urdu
+    guj: "મધ્યમ", // Gujarati
+    pol: "Średni", // Polish
+    ukr: "Середній", // Ukrainian
+    kan: "ಮಧ್ಯಮ", // Kannada
+    mai: "मध्यम", // Maithili
+    mal: "മദ്ധ്യസ്ഥ", // Malayalam
+    pes: "میانه", // Iranian Persian
+    mya: "အလယ်", // Burmese
+    swh: "Kati", // Swahili
+    sun: "Sedheng", // Sundanese
+    ron: "Intermediar", // Romanian
+    pan: "ਮੱਧਮ", // Panjabi
+    bho: "मध्यम", // Bhojpuri
+    amh: "በእንቆቅልሽ", // Amharic
+    hau: "Matsakaici", // Hausa
+    fuv: "Harshe mai canje", // Nigerian Fulfulde
+    bos: "Srednji", // Bosnian
+    hrv: "Srednji", // Croatian
+    nld: "Gemiddeld", // Dutch
+    srp: "Средњи", // Serbian (Cyrillic)
+    tha: "ระดับกลาง", // Thai
+    ckb: "وەسطی", // Central Kurdish
+    yor: "Ipele", // Yoruba
+    uzn: "Orta", // Northern Uzbek
+    zlm: "Tengah", // Malay
+    ibo: "Ọdịnala", // Igbo
+    npi: "मध्यम", // Nepali
+    ceb: "Kabanayong", // Cebuano
+    skr: "درمیانہ", // Saraiki
+    tgl: "Katamtaman", // Tagalog
+    hun: "Közepes", // Hungarian
+    azj: "Orta", // North Azerbaijani
+    sin: "මාධ්‍ය", // Sinhala
+    ell: "Μέσος", // Modern Greek
+    ces: "Střední", // Czech
+    mag: "मध्यम", // Magahi
+    run: "Koresha", // Rundi
+    bel: "Сярэдні", // Belarusian
+    plt: "Amin'ny ankapobeny", // Plateau Malagasy
+    nya: "Kuswana", // Nyanja
+    pbu: "ځاني", // Northern Pashto
+    kin: "Gukoresha", // Kinyarwanda
+    zul: "Ophakathi", // Zulu
+    bul: "Среден език", // Bulgarian
+    swe: "Mellan", // Swedish
+    lin: "Kopana", // Lingala
+    som: "Lugha ya kati", // Somali
+    ilo: "Pangunahing", // Iloko
+  },
+  basic: {
+    eng: "Basic",
+    heb: "בסיסי",
+    cmn: "基础", // Mandarin Chinese
+    spa: "Básico", // Spanish
+    rus: "Базовый", // Russian
+    arb: "أساسي", // Standard Arabic
+    ben: "মৌলিক", // Bengali
+    hin: "मूल", // Hindi
+    por: "Básico", // Portuguese
+    ind: "Dasar", // Indonesian
+    jpn: "基本", // Japanese
+    fra: "De base", // French
+    deu: "Grundlegend", // German
+    jav: "Dasar", // Javanese
+    kor: "기본", // Korean
+    tel: "మూల", // Telugu
+    vie: "Cơ bản", // Vietnamese
+    mar: "मूलभूत", // Marathi
+    ita: "Base", // Italian
+    tam: "மூல", // Tamil
+    tur: "Temel", // Turkish
+    urd: "بنیادی", // Urdu
+    guj: "મૂળભૂત", // Gujarati
+    pol: "Podstawowy", // Polish
+    ukr: "Базовий", // Ukrainian
+    kan: "ಮೂಲ", // Kannada
+    mai: "मूल", // Maithili
+    mal: "ആധാരം", // Malayalam
+    pes: "پایه", // Iranian Persian
+    mya: "အခြေခံ", // Burmese
+    swh: "Msingi", // Swahili
+    sun: "Dasar", // Sundanese
+    ron: "De bază", // Romanian
+    pan: "ਮੂਲ", // Panjabi
+    bho: "मूलभूत", // Bhojpuri
+    amh: "መሠረታዊ", // Amharic
+    hau: "Asasi", // Hausa
+    fuv: "Harshe mai asali", // Nigerian Fulfulde
+    bos: "Osnovni", // Bosnian
+    hrv: "Osnovni", // Croatian
+    nld: "Basis", // Dutch
+    srp: "Основни", // Serbian (Cyrillic)
+    tha: "ขั้นพื้นฐาน", // Thai
+    ckb: "بەسەری", // Central Kurdish
+    yor: "Ipele", // Yoruba
+    uzn: "Asosiy", // Northern Uzbek
+    zlm: "Asas", // Malay
+    ibo: "Mepụta", // Igbo
+    npi: "मूल", // Nepali
+    ceb: "Pangunahing", // Cebuano
+    skr: "بنیادی", // Saraiki
+    tgl: "Pangunahing", // Tagalog
+    hun: "Alap", // Hungarian
+    azj: "Əsas", // North Azerbaijani
+    sin: "මූලික", // Sinhala
+    ell: "Βασικός", // Modern Greek
+    ces: "Základní", // Czech
+    mag: "मूलभूत", // Magahi
+    run: "Amin'ny voalohany", // Rundi
+    bel: "Асноўны", // Belarusian
+    plt: "Fototra", // Plateau Malagasy
+    nya: "Chinsolo", // Nyanja
+    pbu: "اساسی", // Northern Pashto
+    kin: "Icyambere", // Kinyarwanda
+    zul: "Izinyathelo eziyisisekelo", // Zulu
+    bul: "Базов език", // Bulgarian
+    swe: "Grundläggande", // Swedish
+    lin: "Basile", // Lingala
+    som: "Aasaasiga", // Somali
+    ilo: "Batay", // Iloko
+  },
+};
