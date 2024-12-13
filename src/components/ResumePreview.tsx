@@ -19,6 +19,7 @@ import {
   getWorkExperienceTranslation,
   getProjectsTranslation,
   getSkillsTranslation,
+  getTechnologies,
 } from "@/lib/translations";
 
 interface ResumePreviewProps {
@@ -386,7 +387,7 @@ function ProjectsSection({ resumeData }: ResumeSectionProps) {
             </div>
             {proj.technologies && (
               <p className="text-xs font-medium text-gray-600 ">
-                Technologies: {proj.technologies}
+                {getTechnologies(lang)}: {proj.technologies}
               </p>
             )}
           </div>
@@ -401,7 +402,7 @@ function SkillsSection({ resumeData }: ResumeSectionProps) {
 
   if (!skills || !skills?.length) return null;
 
-  const lang = franc(jobTitle, { minLength: 5 });
+  const lang = franc(jobTitle, { minLength: 4 });
 
   return (
     <div className="space-y-1" dir={textDirection}>

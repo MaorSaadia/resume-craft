@@ -310,3 +310,81 @@ export const skillsTranslations: Record<string, string> = {
 export function getSkillsTranslation(lang: string): string {
   return skillsTranslations[lang] || skillsTranslations["eng"];
 }
+
+export const technologiesTranslations: Record<string, string> = {
+  eng: "Technologies",
+  heb: "טכנולוגיות",
+  cmn: "技术", // Mandarin Chinese
+  spa: "Tecnologías", // Spanish
+  rus: "Технологии", // Russian
+  arb: "التقنيات", // Standard Arabic
+  ben: "প্রযুক্তি", // Bengali
+  hin: "प्रौद्योगिकियां", // Hindi
+  por: "Tecnologias", // Portuguese
+  ind: "Teknologi", // Indonesian
+  jpn: "テクノロジー", // Japanese
+  fra: "Technologies", // French
+  deu: "Technologien", // German
+  jav: "Teknologi", // Javanese
+  kor: "기술", // Korean
+  tel: "సాంకేతికతలు", // Telugu
+  vie: "Công nghệ", // Vietnamese
+  mar: "तंत्रज्ञान", // Marathi
+  ita: "Tecnologie", // Italian
+  tam: "தொழில்நுட்பங்கள்", // Tamil
+  tur: "Teknolojiler", // Turkish
+  urd: "ٹیکنالوجیز", // Urdu
+  guj: "ટેક્નોલોજી", // Gujarati
+  pol: "Technologie", // Polish
+  ukr: "Технології", // Ukrainian
+  kan: "ತಂತ್ರಜ್ಞಾನಗಳು", // Kannada
+  mai: "प्रौद्योगिकियां", // Maithili
+  mal: "സാങ്കേതികവിദ്യകൾ", // Malayalam
+  pes: "فناوری‌ها", // Iranian Persian
+  mya: "နည်းပညာများ", // Burmese
+  swh: "Teknolojia", // Swahili
+  sun: "Teknologi", // Sundanese
+  ron: "Tehnologii", // Romanian
+  pan: "ਤਕਨਾਲੋਜੀ", // Panjabi
+  bho: "प्रौद्योगिकियां", // Bhojpuri
+  amh: "ቴክኖሎጂዎች", // Amharic
+  hau: "Fasahar zamani", // Hausa
+  fuv: "Fasahar zamani", // Nigerian Fulfulde
+  bos: "Tehnologije", // Bosnian
+  hrv: "Tehnologije", // Croatian
+  nld: "Technologieën", // Dutch
+  srp: "Технологије", // Serbian (Cyrillic)
+  tha: "เทคโนโลยี", // Thai
+  ckb: "تێکنەلۆژیاکان", // Central Kurdish
+  yor: "Awọn imọ-ẹrọ", // Yoruba
+  uzn: "Texnologiyalar", // Northern Uzbek
+  zlm: "Teknologi", // Malay
+  ibo: "Teknụzụ", // Igbo
+  npi: "प्रविधिहरू", // Nepali
+  ceb: "Teknolohiya", // Cebuano
+  skr: "ٹیکنالوجیز", // Saraiki
+  tgl: "Teknolohiya", // Tagalog
+  hun: "Technológiák", // Hungarian
+  azj: "Texnologiyalar", // North Azerbaijani
+  sin: "තාක්ෂණ", // Sinhala
+  ell: "Τεχνολογίες", // Modern Greek
+  ces: "Technologie", // Czech
+  mag: "प्रौद्योगिकी", // Magahi
+  run: "Ikoranabuhanga", // Rundi
+  bel: "Тэхналогіі", // Belarusian
+  plt: "Teknolojia", // Plateau Malagasy
+  nya: "Zaukadaulo", // Nyanja
+  pbu: "ټکنالوژۍ", // Northern Pashto
+  kin: "Ikoranabuhanga", // Kinyarwanda
+  zul: "Ubuchwepheshe", // Zulu
+  bul: "Технологии", // Bulgarian
+  swe: "Teknologier", // Swedish
+  lin: "Bilanga ya teknoloji", // Lingala
+  som: "Tiknoolajiyada", // Somali
+  ilo: "Teknolohiya", // Iloko
+  kaz: "Технологиялар", // Kazakh
+};
+
+export function getTechnologies(lang: string): string {
+  return technologiesTranslations[lang] || technologiesTranslations["eng"];
+}

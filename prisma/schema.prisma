@@ -41,6 +41,7 @@ model Resume {
   educations         Education[]
   projectExperiences ProjectExperience[] 
   skills             String[]
+  languages          Language[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -99,6 +100,21 @@ model ProjectExperience {
   updatedAt DateTime @updatedAt
 
   @@map("project_experiences")
+}
+
+model Language {
+  id String @id @default(cuid())
+
+  name        String?
+  proficiency String? // e.g., "Native", "Fluent", "Intermediate", "Basic"
+
+  resumeId String
+  resume   Resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("languages")
 }
 
 model UserSubscription {

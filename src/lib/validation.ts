@@ -101,6 +101,19 @@ export const summarySchema = z.object({
   summary: optionalString,
 });
 
+export const languageSchema = z.object({
+  languages: z
+    .array(
+      z.object({
+        name: optionalString,
+        proficiency: optionalString, // e.g., "Native", "Fluent", "Intermediate", "Basic"
+      }),
+    )
+    .optional(),
+});
+
+export type LanguageValues = z.infer<typeof languageSchema>;
+
 export type SummaryValues = z.infer<typeof summarySchema>;
 
 export const resumeSchema = z.object({
@@ -111,6 +124,7 @@ export const resumeSchema = z.object({
   ...projectExperienceSchema.shape,
   ...skillsSchema.shape,
   ...summarySchema.shape,
+  ...languageSchema.shape, // Add the new languages schema
   colorHex: optionalString,
   borderStyle: optionalString,
 });
