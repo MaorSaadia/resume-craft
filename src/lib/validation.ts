@@ -6,6 +6,7 @@ export const generalInfoSchema = z.object({
   title: optionalString,
   description: optionalString,
   textDirection: optionalString,
+  titleLanguage: optionalString,
 });
 
 export type GeneralInfoValues = z.infer<typeof generalInfoSchema>;

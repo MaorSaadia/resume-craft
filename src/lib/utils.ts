@@ -59,6 +59,7 @@ export function mapToResumeValues(data: ResumeServerData): ResumeValues {
     colorHex: data.colorHex,
     summary: data.summary || undefined,
     textDirection: data.textDirection || undefined,
+    titleLanguage: data.titleLanguage || undefined,
     languages: data.languages?.map((lang) => ({
       name: lang.name || undefined,
       proficiency: lang.proficiency || undefined,

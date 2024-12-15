@@ -14,7 +14,7 @@ export async function saveResume(values: ResumeValues) {
     workExperiences,
     projectExperiences,
     educations,
-    languages, // Add languages destructuring
+    languages,
     ...resumeValues
   } = resumeSchema.parse(values);
 

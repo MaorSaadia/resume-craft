@@ -35,7 +35,7 @@ model Resume {
   linkedinLink  String?
   githubLink    String?
   textDirection String @default("ltr")
-
+  titleLanguage String @default("eng")
 
   workExperiences    WorkExperience[]
   educations         Education[]

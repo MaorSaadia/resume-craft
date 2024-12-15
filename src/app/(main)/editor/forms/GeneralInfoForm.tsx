@@ -21,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { RESUME_LANGUAGE_CODES } from "@/lib/language-codes";
 
 export default function GeneralInfoForm({
   resumeData,
@@ -32,6 +33,7 @@ export default function GeneralInfoForm({
       title: resumeData.title || "",
       description: resumeData.description || "",
       textDirection: resumeData.textDirection || "ltr",
+      titleLanguage: resumeData.titleLanguage || "eng",
     },
   });
 
@@ -105,6 +107,36 @@ export default function GeneralInfoForm({
                 </Select>
                 <FormDescription>
                   Choose the text direction for your resume
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="titleLanguage"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Title Language</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select language for section titles" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {RESUME_LANGUAGE_CODES.map((lang) => (
+                      <SelectItem key={lang.code} value={lang.code}>
+                        {lang.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormDescription>
+                  Choose the language for your resume section titles
                 </FormDescription>
                 <FormMessage />
               </FormItem>

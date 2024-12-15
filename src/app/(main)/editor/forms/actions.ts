@@ -99,7 +99,7 @@ export async function generateWorkExperience(
   End date: <YYYY-MM-DD> (only if provided)
   Description: <an optimized description in bullet format like this •, might be infered from the job title>
   
-  Provide only the structured response.
+  Provide only the structured response, response with the same data language.
   `;
 
   try {
@@ -150,7 +150,7 @@ export async function generateProjectExperience(
   Technologies used: <list of technologies>
   Description: <an optimized description in bullet format like this •, highlighting key achievements and technical details>
   
-  Provide only the structured response.
+  Provide only the structured response, response with the same data language.
   `;
 
   try {
