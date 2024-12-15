@@ -483,292 +483,292 @@ export const languageProficiencyTranslations: Record<
   Record<string, string>
 > = {
   native: {
-    eng: "Native",
-    heb: "שפת אם",
-    cmn: "母语", // Mandarin Chinese
-    spa: "Nativo", // Spanish
-    rus: "Родной", // Russian
-    arb: "اللغة الأم", // Standard Arabic
-    ben: "মাতৃভাষা", // Bengali
-    hin: "मूल भाषा", // Hindi
-    por: "Nativo", // Portuguese
-    ind: "Asli", // Indonesian
-    jpn: "母国語", // Japanese
-    fra: "Langue maternelle", // French
-    deu: "Muttersprache", // German
-    jav: "Basa ibu", // Javanese
-    kor: "모국어", // Korean
-    tel: "మాతృభాష", // Telugu
-    vie: "Ngôn ngữ mẹ đẻ", // Vietnamese
-    mar: "मूल भाषा", // Marathi
-    ita: "Madrelingua", // Italian
-    tam: "தாய்மொழி", // Tamil
-    tur: "Ana dil", // Turkish
-    urd: "مادری زبان", // Urdu
-    guj: "જન્મભાષા", // Gujarati
-    pol: "Język ojczysty", // Polish
-    ukr: "Рідна мова", // Ukrainian
-    kan: "ಮಾತೃಭಾಷೆ", // Kannada
-    mai: "मातृभाषा", // Maithili
-    mal: "മാതൃഭാഷ", // Malayalam
-    pes: "زبان مادری", // Iranian Persian
-    mya: "မိခင်ဘာသာစကား", // Burmese
-    swh: "Lugha ya asili", // Swahili
-    sun: "Basa indung", // Sundanese
-    ron: "Limba maternă", // Romanian
-    pan: "ਮਾਤਰੀ ਭਾਸ਼ਾ", // Panjabi
-    bho: "मूल भाषा", // Bhojpuri
-    amh: "ትውልድ ቋንቋ", // Amharic
-    hau: "Harshe na haihuwa", // Hausa
-    fuv: "Harshe na haɓaka", // Nigerian Fulfulde
-    bos: "Materinji jezik", // Bosnian
-    hrv: "Materinji jezik", // Croatian
-    nld: "Moedertaal", // Dutch
-    srp: "Мајчин језик", // Serbian (Cyrillic)
-    tha: "ภาษาแม่", // Thai
-    ckb: "زبانى ژەنەرە", // Central Kurdish
-    yor: "Ede ibile", // Yoruba
-    uzn: "Ona tili", // Northern Uzbek
-    zlm: "Bahasa ibu", // Malay
-    ibo: "Asụsụ nne", // Igbo
-    npi: "मातृभाषा", // Nepali
-    ceb: "Inahan nga sinultian", // Cebuano
-    skr: "مادری زبان", // Saraiki
-    tgl: "Inang wika", // Tagalog
-    hun: "Anyanyelv", // Hungarian
-    azj: "Ana dili", // North Azerbaijani
-    sin: "පාරිභෝගික භාෂාව", // Sinhala
-    ell: "Μητρική γλώσσα", // Modern Greek
-    ces: "Mateřský jazyk", // Czech
-    mag: "मातृभाषा", // Magahi
-    run: "Ururimi rw'amavuko", // Rundi
-    bel: "Родная мова", // Belarusian
-    plt: "Fiteny natoraly", // Plateau Malagasy
-    nya: "Chilankhulo chachibale", // Nyanja
-    pbu: "ژبەی زەهەری", // Northern Pashto
-    kin: "Ururimi rw'ikirundi", // Kinyarwanda
-    zul: "Izilimi zomdabu", // Zulu
-    bul: "Роден език", // Bulgarian
-    swe: "Modersmål", // Swedish
-    lin: "Língua ya mibu", // Lingala
-    som: "Lugha ya asili", // Somali
-    ilo: "Inang a lengguahe", // Iloko
-    kaz: "Туған тіл", // Kazakh
+    eng: "(Native)",
+    heb: "(שפת אם)",
+    cmn: "(母语)", // Mandarin Chinese
+    spa: "(Nativo)", // Spanish
+    rus: "(Родной)", // Russian
+    arb: "(اللغة الأم)", // Standard Arabic
+    ben: "(মাতৃভাষা)", // Bengali
+    hin: "(मूल भाषा)", // Hindi
+    por: "(Nativo)", // Portuguese
+    ind: "(Asli)", // Indonesian
+    jpn: "(母国語)", // Japanese
+    fra: "(Langue maternelle)", // French
+    deu: "(Muttersprache)", // German
+    jav: "(Basa ibu)", // Javanese
+    kor: "(모국어)", // Korean
+    tel: "(మాతృభాష)", // Telugu
+    vie: "(Ngôn ngữ mẹ đẻ)", // Vietnamese
+    mar: "(मूल भाषा)", // Marathi
+    ita: "(Madrelingua)", // Italian
+    tam: "(தாய்மொழி)", // Tamil
+    tur: "(Ana dil)", // Turkish
+    urd: "(مادری زبان)", // Urdu
+    guj: "(જન્મભાષા)", // Gujarati
+    pol: "(Język ojczysty)", // Polish
+    ukr: "(Рідна мова)", // Ukrainian
+    kan: "(ಮಾತೃಭಾಷೆ)", // Kannada
+    mai: "(मातृभाषा)", // Maithili
+    mal: "(മാതൃഭാഷ)", // Malayalam
+    pes: "(زبان مادری)", // Iranian Persian
+    mya: "(မိခင်ဘာသာစကား)", // Burmese
+    swh: "(Lugha ya asili)", // Swahili
+    sun: "(Basa indung)", // Sundanese
+    ron: "(Limba maternă)", // Romanian
+    pan: "(ਮਾਤਰੀ ਭਾਸ਼ਾ)", // Panjabi
+    bho: "(मूल भाषा)", // Bhojpuri
+    amh: "(ትውልድ ቋንቋ)", // Amharic
+    hau: "(Harshe na haihuwa)", // Hausa
+    fuv: "(Harshe na haɓaka)", // Nigerian Fulfulde
+    bos: "(Materinji jezik)", // Bosnian
+    hrv: "(Materinji jezik)", // Croatian
+    nld: "(Moedertaal)", // Dutch
+    srp: "(Мајчин језик)", // Serbian (Cyrillic)
+    tha: "(ภาษาแม่)", // Thai
+    ckb: "(زبانى ژەنەرە)", // Central Kurdish
+    yor: "(Ede ibile)", // Yoruba
+    uzn: "(Ona tili)", // Northern Uzbek
+    zlm: "(Bahasa ibu)", // Malay
+    ibo: "(Asụsụ nne)", // Igbo
+    npi: "(मातृभाषा)", // Nepali
+    ceb: "(Inahan nga sinultian)", // Cebuano
+    skr: "(مادری زبان)", // Saraiki
+    tgl: "(Inang wika)", // Tagalog
+    hun: "(Anyanyelv)", // Hungarian
+    azj: "(Ana dili)", // North Azerbaijani
+    sin: "(පාරිභෝගික භාෂාව)", // Sinhala
+    ell: "(Μητρική γλώσσα)", // Modern Greek
+    ces: "(Mateřský jazyk)", // Czech
+    mag: "(मातृभाषा)", // Magahi
+    run: "(Ururimi rw'amavuko)", // Rundi
+    bel: "(Родная мова)", // Belarusian
+    plt: "(Fiteny natoraly)", // Plateau Malagasy
+    nya: "(Chilankhulo chachibale)", // Nyanja
+    pbu: "(ژبەی زەهەری)", // Northern Pashto
+    kin: "(Ururimi rw'ikirundi)", // Kinyarwanda
+    zul: "(Izilimi zomdabu)", // Zulu
+    bul: "(Роден език)", // Bulgarian
+    swe: "(Modersmål)", // Swedish
+    lin: "(Língua ya mibu)", // Lingala
+    som: "(Lugha ya asili)", // Somali
+    ilo: "(Inang a lengguahe)", // Iloko
+    kaz: "(Туған тіл)", // Kazakh
   },
   fluent: {
-    eng: "Fluent",
-    heb: "חלק", // Fluent in Hebrew (meaning smooth/flowing)
-    cmn: "流利", // Mandarin Chinese
-    spa: "Fluido", // Spanish (Fluent)
-    rus: "Свободно", // Russian (Freely/Fluently)
-    arb: "بطلاقة", // Arabic (Fluently)
-    ben: "সুসম্বদ্ধ", // Bengali (Fluent)
-    hin: "धाराप्रवाह", // Hindi (Fluent)
-    por: "Fluente", // Portuguese
-    ind: "Lancar", // Indonesian (Fluent)
-    jpn: "流暢", // Japanese (Fluent)
-    fra: "Courant", // French (Fluent)
-    deu: "Fließend", // German (Fluent)
-    jav: "Lancar", // Javanese (Fluent)
-    kor: "유창한", // Korean (Fluent)
-    tel: "నిష్ణాత", // Telugu (Fluent)
-    vie: "Lưu loát", // Vietnamese (Fluent)
-    mar: "धाराप्रवाह", // Marathi (Fluent)
-    ita: "Fluente", // Italian
-    tam: "பாராட்டத்திற்குரிய", // Tamil (Fluent)
-    tur: "Akıcı", // Turkish (Fluent)
-    urd: "مفصل", // Urdu (Fluent)
-    guj: "પ્રવાહિત", // Gujarati (Fluent)
-    pol: "Biegły", // Polish (Fluent)
-    ukr: "Свободно", // Ukrainian (Fluently)
-    kan: "ನಿಭಾಯಿಸಿದ", // Kannada (Fluent)
-    mai: "धाराप्रवाह", // Maithili (Fluent)
-    mal: "സൂക്ഷ്മമായ", // Malayalam (Fluent)
-    pes: "جاری", // Iranian Persian (Fluent)
-    mya: "ကျွမ်းကျင်", // Burmese (Fluent)
-    swh: "Ufanisi", // Swahili (Fluent)
-    sun: "Lancar", // Sundanese (Fluent)
-    ron: "Fluent", // Romanian
-    pan: "ਧਾਰਾਵਾਹਿਕ", // Panjabi (Fluent)
-    bho: "धाराप्रवाह", // Bhojpuri (Fluent)
-    amh: "በሚሰማው", // Amharic (Fluent)
-    hau: "Harshe mai launin", // Hausa (Fluent)
-    fuv: "Harshe mai haske", // Nigerian Fulfulde (Fluent)
-    bos: "Tečan", // Bosnian (Fluent)
-    hrv: "Tečan", // Croatian (Fluent)
-    nld: "Vloeiend", // Dutch (Fluent)
-    srp: "Течан", // Serbian (Cyrillic) (Fluent)
-    tha: "คล่องแคล่ว", // Thai (Fluent)
-    ckb: "بەختیارە", // Kurdish (Fluent)
-    yor: "Alakalẹ", // Yoruba (Fluent)
-    uzn: "Oqil", // Uzbek (Fluent)
-    zlm: "Lancar", // Malay (Fluent)
-    ibo: "Ọlụrụọma", // Igbo (Fluent)
-    npi: "धाराप्रवाह", // Nepali (Fluent)
-    ceb: "Daghang Sinultian", // Cebuano (Fluent)
-    skr: "مفصل", // Saraiki (Fluent)
-    tgl: "Matatas", // Tagalog (Fluent)
-    hun: "Folyékony", // Hungarian (Fluent)
-    azj: "Səlis", // Azerbaijani (Fluent)
-    sin: "චුටි", // Sinhala (Fluent)
-    ell: "Ροή", // Greek (Fluent)
-    ces: "Plynulý", // Czech (Fluent)
-    mag: "धाराप्रवाह", // Magahi (Fluent)
-    run: "Izoboka", // Rundi (Fluent)
-    bel: "Свободны", // Belarusian (Fluent)
-    plt: "Fluent", // Malagasy (Fluent)
-    nya: "Wopanga", // Nyanja (Fluent)
-    pbu: "روان", // Pashto (Fluent)
-    kin: "Izwi", // Kinyarwanda (Fluent)
-    zul: "Olungele", // Zulu (Fluent)
-    bul: "Свободен език", // Bulgarian (Fluent)
-    swe: "Flytande", // Swedish (Fluent)
-    lin: "Mibengaleli", // Lingala (Fluent)
-    som: "Lugha isixhumi", // Somali (Fluent)
-    ilo: "Adalinga", // Iloko (Fluent)
+    eng: "(Fluent)",
+    heb: "(חלק)",
+    cmn: "(流利)",
+    spa: "(Fluido)",
+    rus: "(Свободно)",
+    arb: "(بطلاقة)",
+    ben: "(সুসম্বদ্ধ)",
+    hin: "(धाराप्रवाह)",
+    por: "(Fluente)",
+    ind: "(Lancar)",
+    jpn: "(流暢)",
+    fra: "(Courant)",
+    deu: "(Fließend)",
+    jav: "(Lancar)",
+    kor: "(유창한)",
+    tel: "(నిష్ణాత)",
+    vie: "(Lưu loát)",
+    mar: "(धाराप्रवाह)",
+    ita: "(Fluente)",
+    tam: "(பாராட்டத்திற்குரிய)",
+    tur: "(Akıcı)",
+    urd: "(مفصل)",
+    guj: "(પ્રવાહિત)",
+    pol: "(Biegły)",
+    ukr: "(Свободно)",
+    kan: "(ನಿಭಾಯಿಸಿದ)",
+    mai: "(धाराप्रवाह)",
+    mal: "(സൂക്ഷ്മമായ)",
+    pes: "(جاری)",
+    mya: "(ကျွမ်းကျင်)",
+    swh: "(Ufanisi)",
+    sun: "(Lancar)",
+    ron: "(Fluent)",
+    pan: "(ਧਾਰਾਵਾਹਿਕ)",
+    bho: "(धाराप्रवाह)",
+    amh: "(በሚሰማው)",
+    hau: "(Harshe mai launin)",
+    fuv: "(Harshe mai haske)",
+    bos: "(Tečan)",
+    hrv: "(Tečan)",
+    nld: "(Vloeiend)",
+    srp: "(Течан)",
+    tha: "(คล่องแคล่ว)",
+    ckb: "(بەختیارە)",
+    yor: "(Alakalẹ)",
+    uzn: "(Oqil)",
+    zlm: "(Lancar)",
+    ibo: "(Ọlụrụọma)",
+    npi: "(धाराप्रवाह)",
+    ceb: "(Daghang Sinultian)",
+    skr: "(مفصل)",
+    tgl: "(Matatas)",
+    hun: "(Folyékony)",
+    azj: "(Səlis)",
+    sin: "(චුටි)",
+    ell: "(Ροή)",
+    ces: "(Plynulý)",
+    mag: "(धाराप्रवाह)",
+    run: "(Izoboka)",
+    bel: "(Свободны)",
+    plt: "(Fluent)",
+    nya: "(Wopanga)",
+    pbu: "(روان)",
+    kin: "(Izwi)",
+    zul: "(Olungele)",
+    bul: "(Свободен език)",
+    swe: "(Flytande)",
+    lin: "(Mibengaleli)",
+    som: "(Lugha isixhumi)",
+    ilo: "(Adalinga)",
   },
   intermediate: {
-    eng: "Intermediate",
-    heb: "בינוני",
-    cmn: "中级", // Mandarin Chinese
-    spa: "Intermedio", // Spanish
-    rus: "Средний", // Russian
-    arb: "متوسط", // Standard Arabic
-    ben: "মাঝারি", // Bengali
-    hin: "मध्यम", // Hindi
-    por: "Intermediário", // Portuguese
-    ind: "Menengah", // Indonesian
-    jpn: "中級", // Japanese
-    fra: "Intermédiaire", // French
-    deu: "Mittelstufe", // German
-    jav: "Sedheng", // Javanese
-    kor: "중급", // Korean
-    tel: "మధ్యస్థాయిగా", // Telugu
-    vie: "Trung cấp", // Vietnamese
-    mar: "मध्यम", // Marathi
-    ita: "Intermedio", // Italian
-    tam: "மத்திய", // Tamil
-    tur: "Orta", // Turkish
-    urd: "درمیانہ", // Urdu
-    guj: "મધ્યમ", // Gujarati
-    pol: "Średni", // Polish
-    ukr: "Середній", // Ukrainian
-    kan: "ಮಧ್ಯಮ", // Kannada
-    mai: "मध्यम", // Maithili
-    mal: "മദ്ധ്യസ്ഥ", // Malayalam
-    pes: "میانه", // Iranian Persian
-    mya: "အလယ်", // Burmese
-    swh: "Kati", // Swahili
-    sun: "Sedheng", // Sundanese
-    ron: "Intermediar", // Romanian
-    pan: "ਮੱਧਮ", // Panjabi
-    bho: "मध्यम", // Bhojpuri
-    amh: "በእንቆቅልሽ", // Amharic
-    hau: "Matsakaici", // Hausa
-    fuv: "Harshe mai canje", // Nigerian Fulfulde
-    bos: "Srednji", // Bosnian
-    hrv: "Srednji", // Croatian
-    nld: "Gemiddeld", // Dutch
-    srp: "Средњи", // Serbian (Cyrillic)
-    tha: "ระดับกลาง", // Thai
-    ckb: "وەسطی", // Central Kurdish
-    yor: "Ipele", // Yoruba
-    uzn: "Orta", // Northern Uzbek
-    zlm: "Tengah", // Malay
-    ibo: "Ọdịnala", // Igbo
-    npi: "मध्यम", // Nepali
-    ceb: "Kabanayong", // Cebuano
-    skr: "درمیانہ", // Saraiki
-    tgl: "Katamtaman", // Tagalog
-    hun: "Közepes", // Hungarian
-    azj: "Orta", // North Azerbaijani
-    sin: "මාධ්‍ය", // Sinhala
-    ell: "Μέσος", // Modern Greek
-    ces: "Střední", // Czech
-    mag: "मध्यम", // Magahi
-    run: "Koresha", // Rundi
-    bel: "Сярэдні", // Belarusian
-    plt: "Amin'ny ankapobeny", // Plateau Malagasy
-    nya: "Kuswana", // Nyanja
-    pbu: "ځاني", // Northern Pashto
-    kin: "Gukoresha", // Kinyarwanda
-    zul: "Ophakathi", // Zulu
-    bul: "Среден език", // Bulgarian
-    swe: "Mellan", // Swedish
-    lin: "Kopana", // Lingala
-    som: "Lugha ya kati", // Somali
-    ilo: "Pangunahing", // Iloko
+    eng: "(Intermediate)",
+    heb: "(בינוני)",
+    cmn: "(中级)",
+    spa: "(Intermedio)",
+    rus: "(Средний)",
+    arb: "(متوسط)",
+    ben: "(মাঝারি)",
+    hin: "(मध्यम)",
+    por: "(Intermediário)",
+    ind: "(Menengah)",
+    jpn: "(中級)",
+    fra: "(Intermédiaire)",
+    deu: "(Mittelstufe)",
+    jav: "(Sedheng)",
+    kor: "(중급)",
+    tel: "(మధ్యస్థాయిగా)",
+    vie: "(Trung cấp)",
+    mar: "(मध्यम)",
+    ita: "(Intermedio)",
+    tam: "(மத்திய)",
+    tur: "(Orta)",
+    urd: "(درمیانہ)",
+    guj: "(મધ્યમ)",
+    pol: "(Średni)",
+    ukr: "(Середній)",
+    kan: "(ಮಧ್ಯಮ)",
+    mai: "(मध्यम)",
+    mal: "(മദ്ധ്യസ്ഥ)",
+    pes: "(میانه)",
+    mya: "(အလယ်)",
+    swh: "(Kati)",
+    sun: "(Sedheng)",
+    ron: "(Intermediar)",
+    pan: "(ਮੱਧਮ)",
+    bho: "(मध्यम)",
+    amh: "(በእንቆቅልሽ)",
+    hau: "(Matsakaici)",
+    fuv: "(Harshe mai canje)",
+    bos: "(Srednji)",
+    hrv: "(Srednji)",
+    nld: "(Gemiddeld)",
+    srp: "(Средњи)",
+    tha: "(ระดับกลาง)",
+    ckb: "(وەسطی)",
+    yor: "(Ipele)",
+    uzn: "(Orta)",
+    zlm: "(Tengah)",
+    ibo: "(Ọdịnala)",
+    npi: "(मध्यम)",
+    ceb: "(Kabanayong)",
+    skr: "(درمیانہ)",
+    tgl: "(Katamtaman)",
+    hun: "(Közepes)",
+    azj: "(Orta)",
+    sin: "(මාධ්‍ය)",
+    ell: "(Μέσος)",
+    ces: "(Střední)",
+    mag: "(मध्यम)",
+    run: "(Koresha)",
+    bel: "(Сярэдні)",
+    plt: "(Amin'ny ankapobeny)",
+    nya: "(Kuswana)",
+    pbu: "(ځاني)",
+    kin: "(Gukoresha)",
+    zul: "(Ophakathi)",
+    bul: "(Среден език)",
+    swe: "(Mellan)",
+    lin: "(Kopana)",
+    som: "(Lugha ya kati)",
+    ilo: "(Pangunahing)",
   },
   basic: {
-    eng: "Basic",
-    heb: "בסיסי",
-    cmn: "基础", // Mandarin Chinese
-    spa: "Básico", // Spanish
-    rus: "Базовый", // Russian
-    arb: "أساسي", // Standard Arabic
-    ben: "মৌলিক", // Bengali
-    hin: "मूल", // Hindi
-    por: "Básico", // Portuguese
-    ind: "Dasar", // Indonesian
-    jpn: "基本", // Japanese
-    fra: "De base", // French
-    deu: "Grundlegend", // German
-    jav: "Dasar", // Javanese
-    kor: "기본", // Korean
-    tel: "మూల", // Telugu
-    vie: "Cơ bản", // Vietnamese
-    mar: "मूलभूत", // Marathi
-    ita: "Base", // Italian
-    tam: "மூல", // Tamil
-    tur: "Temel", // Turkish
-    urd: "بنیادی", // Urdu
-    guj: "મૂળભૂત", // Gujarati
-    pol: "Podstawowy", // Polish
-    ukr: "Базовий", // Ukrainian
-    kan: "ಮೂಲ", // Kannada
-    mai: "मूल", // Maithili
-    mal: "ആധാരം", // Malayalam
-    pes: "پایه", // Iranian Persian
-    mya: "အခြေခံ", // Burmese
-    swh: "Msingi", // Swahili
-    sun: "Dasar", // Sundanese
-    ron: "De bază", // Romanian
-    pan: "ਮੂਲ", // Panjabi
-    bho: "मूलभूत", // Bhojpuri
-    amh: "መሠረታዊ", // Amharic
-    hau: "Asasi", // Hausa
-    fuv: "Harshe mai asali", // Nigerian Fulfulde
-    bos: "Osnovni", // Bosnian
-    hrv: "Osnovni", // Croatian
-    nld: "Basis", // Dutch
-    srp: "Основни", // Serbian (Cyrillic)
-    tha: "ขั้นพื้นฐาน", // Thai
-    ckb: "بەسەری", // Central Kurdish
-    yor: "Ipele", // Yoruba
-    uzn: "Asosiy", // Northern Uzbek
-    zlm: "Asas", // Malay
-    ibo: "Mepụta", // Igbo
-    npi: "मूल", // Nepali
-    ceb: "Pangunahing", // Cebuano
-    skr: "بنیادی", // Saraiki
-    tgl: "Pangunahing", // Tagalog
-    hun: "Alap", // Hungarian
-    azj: "Əsas", // North Azerbaijani
-    sin: "මූලික", // Sinhala
-    ell: "Βασικός", // Modern Greek
-    ces: "Základní", // Czech
-    mag: "मूलभूत", // Magahi
-    run: "Amin'ny voalohany", // Rundi
-    bel: "Асноўны", // Belarusian
-    plt: "Fototra", // Plateau Malagasy
-    nya: "Chinsolo", // Nyanja
-    pbu: "اساسی", // Northern Pashto
-    kin: "Icyambere", // Kinyarwanda
-    zul: "Izinyathelo eziyisisekelo", // Zulu
-    bul: "Базов език", // Bulgarian
-    swe: "Grundläggande", // Swedish
-    lin: "Basile", // Lingala
-    som: "Aasaasiga", // Somali
-    ilo: "Batay", // Iloko
+    eng: "(Basic)",
+    heb: "(בסיסי)",
+    cmn: "(基础)",
+    spa: "(Básico)",
+    rus: "(Базовый)",
+    arb: "(أساسي)",
+    ben: "(মৌলিক)",
+    hin: "(मूल)",
+    por: "(Básico)",
+    ind: "(Dasar)",
+    jpn: "(基本)",
+    fra: "(De base)",
+    deu: "(Grundlegend)",
+    jav: "(Dasar)",
+    kor: "(기본)",
+    tel: "(మూల)",
+    vie: "(Cơ bản)",
+    mar: "(मूलभूत)",
+    ita: "(Base)",
+    tam: "(மூல)",
+    tur: "(Temel)",
+    urd: "(بنیادی)",
+    guj: "(મૂળભૂત)",
+    pol: "(Podstawowy)",
+    ukr: "(Базовий)",
+    kan: "(ಮೂಲ)",
+    mai: "(मूल)",
+    mal: "(ആധാരം)",
+    pes: "(پایه)",
+    mya: "(အခြေခံ)",
+    swh: "(Msingi)",
+    sun: "(Dasar)",
+    ron: "(De bază)",
+    pan: "(ਮੂਲ)",
+    bho: "(मूलभूत)",
+    amh: "(መሠረታዊ)",
+    hau: "(Asasi)",
+    fuv: "(Harshe mai asali)",
+    bos: "(Osnovni)",
+    hrv: "(Osnovni)",
+    nld: "(Basis)",
+    srp: "(Основни)",
+    tha: "(ขั้นพื้นฐาน)",
+    ckb: "(بەسەری)",
+    yor: "(Ipele)",
+    uzn: "(Asosiy)",
+    zlm: "(Asas)",
+    ibo: "(Mepụta)",
+    npi: "(मूल)",
+    ceb: "(Pangunahing)",
+    skr: "(بنیادی)",
+    tgl: "(Pangunahing)",
+    hun: "(Alap)",
+    azj: "(Əsas)",
+    sin: "(මූලික)",
+    ell: "(Βασικός)",
+    ces: "(Základní)",
+    mag: "(मूलभूत)",
+    run: "(Amin'ny voalohany)",
+    bel: "(Асноўны)",
+    plt: "(Fototra)",
+    nya: "(Chinsolo)",
+    pbu: "(اساسی)",
+    kin: "(Icyambere)",
+    zul: "(Izinyathelo eziyisisekelo)",
+    bul: "(Базов език)",
+    swe: "(Grundläggande)",
+    lin: "(Basile)",
+    som: "(Aasaasiga)",
+    ilo: "(Batay)",
   },
 };
