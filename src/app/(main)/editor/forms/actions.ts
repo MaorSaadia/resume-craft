@@ -54,7 +54,7 @@ export async function generateSummary(input: GenerateSummaryInput) {
       .join("\n\n")}
     Skills: ${skills}
     
-    Instructions: Write a concise, professional summary focusing on key achievements and skills response with the same data language.
+    Instructions: Write a concise, professional summary focusing on key achievements and skills,very importent! response with the same data language.
   `;
 
   try {
@@ -89,7 +89,7 @@ export async function generateWorkExperience(
   const prompt = `
   You are a job resume generator AI. Your task is to generate a single work experience entry based on the user input.
   Your response must adhere to the following structure. You can omit fields if they can't be infered from the provided data, but don't add any new ones.
-  Generate a structured work experience entry based on this description:
+  Generate a structured work experience entry based on this description.
   ${description}
   
   Required format:
@@ -97,9 +97,9 @@ export async function generateWorkExperience(
   Company: <company name>
   Start date: <YYYY-MM-DD> (only if provided)
   End date: <YYYY-MM-DD> (only if provided)
-  Description: <an optimized description in bullet format like this •, might be infered from the job title>
+  Description: <an optimized description in bullet format like this •. Drop a line at any bullet point, might be infered from the job title>
   
-  Provide only the structured response, response with the same data language.
+  Provide only the structured response, very importent! response with the same data language.
   `;
 
   try {
@@ -150,7 +150,7 @@ export async function generateProjectExperience(
   Technologies used: <list of technologies>
   Description: <an optimized description in bullet format like this •, highlighting key achievements and technical details>
   
-  Provide only the structured response, response with the same data language.
+  Provide only the structured response,very importent! response with the same data language.
   `;
 
   try {
