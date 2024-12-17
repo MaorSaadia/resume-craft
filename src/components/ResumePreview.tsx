@@ -7,7 +7,6 @@ import {
   FaGlobe,
   FaLinkedin,
 } from "react-icons/fa";
-import { franc } from "franc-all";
 
 import useDimensions from "@/hooks/useDimensions";
 import { BorderStyles } from "@/app/(main)/editor/BorderStyleButton";
@@ -38,8 +37,6 @@ export default function ResumePreview({
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { width } = useDimensions(containerRef);
-
-  franc("Alle menslike wesens word vry");
 
   return (
     <div

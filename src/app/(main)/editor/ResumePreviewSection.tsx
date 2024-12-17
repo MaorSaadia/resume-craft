@@ -1,9 +1,11 @@
-import ResumePreview from "@/components/ResumePreview";
+import { useRef } from "react";
+
 import { cn } from "@/lib/utils";
 import { ResumeValues } from "@/lib/validation";
+import ResumePreview from "@/components/ResumePreview";
 import BorderStyleButton from "./BorderStyleButton";
 import ColorPicker from "./ColorPicker";
-import ResumeDownload from "./ResumeDownload";
+import ResumeDownloadButton from "./ResumeDownloadButton";
 
 interface ResumePreviewSectionProps {
   resumeData: ResumeValues;
@@ -16,11 +18,7 @@ export default function ResumePreviewSection({
   setResumeData,
   className,
 }: ResumePreviewSectionProps) {
-  const getHtmlContent = () => {
-    // Return the HTML content of the resume
-    const resumeElement = document.getElementById("resumePreviewContent");
-    return resumeElement ? resumeElement.innerHTML : "";
-  };
+  const contentRef = useRef<HTMLDivElement>(null);
 
   return (
     <div
@@ -39,15 +37,15 @@ export default function ResumePreviewSection({
             setResumeData({ ...resumeData, borderStyle })
           }
         />
-        <ResumeDownload
-          title={resumeData.title || "unamed"}
-          isLoading={false}
-          getHtmlContent={getHtmlContent}
+        <ResumeDownloadButton
+          documentTitle={resumeData.title || "unamed"}
+          contentRef={contentRef}
         />
       </div>
       <div className="flex w-full justify-center overflow-y-auto bg-secondary p-3">
         <ResumePreview
           resumeData={resumeData}
+          contentRef={contentRef}
           className="max-w-2xl shadow-md"
         />
       </div>
