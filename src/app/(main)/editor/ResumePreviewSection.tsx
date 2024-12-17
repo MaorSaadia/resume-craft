@@ -6,6 +6,7 @@ import ResumePreview from "@/components/ResumePreview";
 import BorderStyleButton from "./BorderStyleButton";
 import ColorPicker from "./ColorPicker";
 import ResumeDownloadButton from "./ResumeDownloadButton";
+import ResumeFullPreview from "./ResumeFullPreview";
 
 interface ResumePreviewSectionProps {
   resumeData: ResumeValues;
@@ -37,11 +38,13 @@ export default function ResumePreviewSection({
             setResumeData({ ...resumeData, borderStyle })
           }
         />
+        <ResumeFullPreview resumeData={resumeData} ref={contentRef} />
         <ResumeDownloadButton
           documentTitle={resumeData.title || "unamed"}
           contentRef={contentRef}
         />
       </div>
+
       <div className="flex w-full justify-center overflow-y-auto bg-secondary p-3">
         <ResumePreview
           resumeData={resumeData}
