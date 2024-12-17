@@ -86,3 +86,9 @@ body {
   size: A4;
   margin: 0.6cm;
 }
+
+@layer base {
+  img {
+    display: initial;
+  }
+}

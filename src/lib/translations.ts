@@ -471,7 +471,6 @@ export function getLanguagesProficiency(
   lang: string,
   proficiency: string,
 ): string {
-  console.log(lang, proficiency); // For debugging
   return (
     languageProficiencyTranslations[proficiency]?.[lang] ||
     languageProficiencyTranslations[proficiency]?.["eng"]

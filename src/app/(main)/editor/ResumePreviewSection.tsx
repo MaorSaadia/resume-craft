@@ -16,6 +16,12 @@ export default function ResumePreviewSection({
   setResumeData,
   className,
 }: ResumePreviewSectionProps) {
+  const getHtmlContent = () => {
+    // Return the HTML content of the resume
+    const resumeElement = document.getElementById("resumePreviewContent");
+    return resumeElement ? resumeElement.innerHTML : "";
+  };
+
   return (
     <div
       className={cn("group relative hidden w-full md:flex md:w-1/2", className)}
@@ -36,6 +42,7 @@ export default function ResumePreviewSection({
         <ResumeDownload
           title={resumeData.title || "unamed"}
           isLoading={false}
+          getHtmlContent={getHtmlContent}
         />
       </div>
       <div className="flex w-full justify-center overflow-y-auto bg-secondary p-3">

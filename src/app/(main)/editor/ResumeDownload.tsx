@@ -1,95 +1,74 @@
 import { useCallback, useState } from "react";
-import { jsPDF } from "jspdf";
 import { DownloadIcon } from "lucide-react";
-import html2canvas from "html2canvas";
-
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
-import { formatFileName } from "@/lib/helper";
 
-const ResumeDownload = (props: { title: string; isLoading: boolean }) => {
-  const { title, isLoading } = props;
+const ResumeDownload = (props: {
+  title: string;
+  isLoading: boolean;
+  getHtmlContent: () => string;
+}) => {
+  const { title, isLoading, getHtmlContent } = props;
   const [loading, setLoading] = useState(false);
 
   const handleDownload = useCallback(async () => {
-    const resumeElement = document.getElementById("resumePreviewContent");
-    if (!resumeElement) {
+    const htmlContent = getHtmlContent();
+
+    if (!htmlContent) {
       toast({
         title: "Error",
-        description: "Could not download",
+        description: "Could not generate resume content",
         variant: "destructive",
       });
       return;
     }
+
     setLoading(true);
 
-    const fileName = formatFileName(title);
     try {
-      // Increase the scale for better resolution
-      const canvas = await html2canvas(resumeElement, {
-        scale: 4, // Increase the scale to 4 for higher quality
-        useCORS: true,
-        logging: false,
-        allowTaint: true,
-        imageTimeout: 0,
+      const response = await fetch("/api/generate-resume-pdf", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          htmlContent,
+          title,
+        }),
       });
 
-      const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: "a4",
-        putOnlyUsedFonts: true, // Only embed used fonts
-      });
+      if (!response.ok) {
+        // Log detailed error
+        const errorText = await response.text();
+        console.error("Error Response:", errorText);
 
-      const imgData = canvas.toDataURL("image/jpeg", 1.0);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-
-      // Calculate the height to maintain aspect ratio
-      const imgHeight = (canvas.height * pdfWidth) / canvas.width;
-      const heightRatio = imgHeight / pdfHeight;
-
-      // If the image is taller than one page, split it
-      if (heightRatio > 1) {
-        const totalPages = Math.ceil(heightRatio);
-        for (let i = 0; i < totalPages; i++) {
-          if (i > 0) {
-            pdf.addPage();
-          }
-
-          // Calculate the part of the image to draw on this page
-          const sourceY = (i * canvas.height) / totalPages;
-          const sourceHeight = canvas.height / totalPages;
-
-          pdf.addImage(
-            imgData,
-            "JPEG",
-            0,
-            0,
-            pdfWidth,
-            sourceHeight,
-            undefined,
-            "FAST",
-          );
-        }
-      } else {
-        // If the image fits on one page
-        pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, imgHeight);
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
       }
 
-      pdf.save(fileName);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${title}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
     } catch (error) {
-      console.error("Error generating PDF:", error);
+      console.error("Detailed Download Error:", error);
+
       toast({
-        title: "Error",
-        description: "Error generating PDF",
+        title: "PDF Download Error",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Unexpected error generating PDF",
         variant: "destructive",
       });
     } finally {
       setLoading(false);
     }
-  }, [title]);
-
+  }, [title, getHtmlContent]);
   return (
     <Button
       disabled={isLoading || loading}
