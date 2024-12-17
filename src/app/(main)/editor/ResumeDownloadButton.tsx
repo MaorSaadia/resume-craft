@@ -1,7 +1,7 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { DownloadIcon } from "lucide-react";
 import { useReactToPrint } from "react-to-print";
+import { DownloadIcon } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 interface ResumeDownloadButtonProps {
   contentRef: React.RefObject<HTMLDivElement>;
@@ -15,6 +15,7 @@ const ResumeDownloadButton: React.FC<ResumeDownloadButtonProps> = ({
   const handlePrint = useReactToPrint({
     contentRef,
     documentTitle: documentTitle,
+    preserveAfterPrint: false,
   });
 
   return (
