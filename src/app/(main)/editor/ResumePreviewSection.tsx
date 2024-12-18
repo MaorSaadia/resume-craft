@@ -40,7 +40,7 @@ export default function ResumePreviewSection({
         />
         <ResumeFullPreview
           resumeData={resumeData}
-          ref={contentRef}
+          contentRef={contentRef}
           title={resumeData.title || "Resume"}
         />
         <ResumeDownloadButton
