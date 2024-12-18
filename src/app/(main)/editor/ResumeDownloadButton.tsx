@@ -15,11 +15,12 @@ const ResumeDownloadButton: React.FC<ResumeDownloadButtonProps> = ({
   const handlePrint = useReactToPrint({
     contentRef,
     documentTitle: documentTitle,
-    preserveAfterPrint: false,
+    preserveAfterPrint: true,
   });
 
   return (
     <Button
+      className="-mt-3"
       variant="outline"
       size="icon"
       title="Download Resume"

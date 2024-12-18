@@ -6,9 +6,9 @@ import {
   MoreVertical,
   Printer,
   Trash2,
-  Eye,
   FileText,
-  DownloadIcon,
+  ExpandIcon,
+  X,
 } from "lucide-react";
 import { useRef, useState, useTransition } from "react";
 import { useReactToPrint } from "react-to-print";
@@ -123,8 +123,8 @@ function MoreMenu({ resumeId, resume, onPrintClick }: MoreMenuProps) {
             className="flex items-center gap-2"
             onClick={() => setShowFullPreview(true)}
           >
-            <Eye className="size-4" />
-            Preview
+            <ExpandIcon className="size-4" />
+            Expand
           </DropdownMenuItem>
           <DropdownMenuItem
             className="flex items-center gap-2"
@@ -169,10 +169,10 @@ function MoreMenu({ resumeId, resume, onPrintClick }: MoreMenuProps) {
             <Button
               variant="outline"
               size="icon"
-              title="Print Resume"
-              onClick={onPrintClick}
+              title="Close"
+              onClick={() => setShowFullPreview(false)}
             >
-              <DownloadIcon className="size-5" />
+              <X className="size-5" />
             </Button>
           </div>
           <div className="w-full h-full px-2 pb-1 border-t">

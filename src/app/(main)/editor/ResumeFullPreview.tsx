@@ -1,6 +1,5 @@
-import { ForwardedRef, forwardRef } from "react";
-import { DownloadIcon, ExpandIcon, FileText } from "lucide-react";
-import { useReactToPrint } from "react-to-print";
+import { ForwardedRef, forwardRef, useState } from "react";
+import { ExpandIcon, FileText, X } from "lucide-react";
 
 import {
   Dialog,
@@ -21,19 +20,26 @@ interface ResumeFullPreviewProps {
 
 const ResumeFullPreview = forwardRef(
   (
-    { resumeData, title, className, contentRef }: ResumeFullPreviewProps,
+    { resumeData, title, className }: ResumeFullPreviewProps,
     ref: ForwardedRef<HTMLDivElement>,
   ) => {
-    const handlePrint = useReactToPrint({
-      contentRef,
-      documentTitle: title || "Resume",
-      preserveAfterPrint: true,
-    });
+    // const handlePrint = useReactToPrint({
+    //   contentRef,
+    //   documentTitle: title || "Resume",
+    //   preserveAfterPrint: true,
+    // });
+
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
-      <Dialog>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <Button variant="outline" size="icon" title="Preview">
+          <Button
+            variant="outline"
+            size="icon"
+            title="Preview"
+            onClick={() => setIsOpen(true)}
+          >
             <ExpandIcon className="size-5" />
           </Button>
         </DialogTrigger>
@@ -63,10 +69,10 @@ const ResumeFullPreview = forwardRef(
             <Button
               variant="outline"
               size="icon"
-              title="Print Resume"
-              onClick={() => handlePrint && handlePrint()}
+              title="Close Dialog"
+              onClick={() => setIsOpen(false)}
             >
-              <DownloadIcon className="size-5" />
+              <X className="size-5" />
             </Button>
           </div>
           <div className="w-full h-full px-2 pb-1 border-t">
