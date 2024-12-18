@@ -1,3 +1,4 @@
+import React from "react";
 import { useReactToPrint } from "react-to-print";
 import { DownloadIcon } from "lucide-react";
 
@@ -16,6 +17,18 @@ const ResumeDownloadButton: React.FC<ResumeDownloadButtonProps> = ({
     contentRef,
     documentTitle: documentTitle,
     preserveAfterPrint: false,
+    pageStyle: `
+      @page {
+        size: auto;
+        margin: 0mm;
+      }
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    `,
   });
 
   return (

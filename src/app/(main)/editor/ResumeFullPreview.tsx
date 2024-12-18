@@ -5,7 +5,6 @@ import { useReactToPrint } from "react-to-print";
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
@@ -38,6 +37,7 @@ const ResumeFullPreview = forwardRef(
             <ExpandIcon className="size-5" />
           </Button>
         </DialogTrigger>
+        <DialogTitle></DialogTitle>
         <DialogContent
           className="
             sm:max-w-4xl p-0
@@ -46,41 +46,30 @@ const ResumeFullPreview = forwardRef(
             overflow-y-auto
           "
         >
-          <DialogHeader
-            className="!pb-0
-              !m-0 sticky top-0
-              backdrop-blur bg-white
-              dark:bg-black/70 z-10
-              flex justify-between items-center
+          <div
+            className="
+              sticky top-0 z-10 
+              flex justify-between items-center 
+              w-full 
+              backdrop-blur bg-white 
+              dark:bg-black/70 
+              px-3 py-2 -mb-2
             "
           >
-            <DialogTitle
-              className="
-                flex items-center gap-1 text-[20px]
-                pt-2 px-3 font-semibold opacity-100
-                flex-grow
-              "
-            >
-              <FileText
-                size="20px"
-                className="
-                  stroke-primary
-                "
-              />
+            <div className="flex items-center gap-1 text-[20px] font-semibold">
+              <FileText size="20px" className="stroke-primary mr-2" />
               {title}
-            </DialogTitle>
-            <div className="pr-3">
-              <Button
-                variant="outline"
-                size="icon"
-                title="Print Resume"
-                onClick={() => handlePrint && handlePrint()}
-              >
-                <PrinterIcon className="size-5" />
-              </Button>
             </div>
-          </DialogHeader>
-          <div className="w-full h-full px-2 pb-4 border-t">
+            <Button
+              variant="outline"
+              size="icon"
+              title="Print Resume"
+              onClick={() => handlePrint && handlePrint()}
+            >
+              <PrinterIcon className="size-5" />
+            </Button>
+          </div>
+          <div className="w-full h-full px-2 pb-1 border-t">
             <ResumePreview
               resumeData={resumeData}
               contentRef={ref}
