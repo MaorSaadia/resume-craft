@@ -57,7 +57,7 @@ const ResumeFullPreview = forwardRef(
             "
           >
             <div className="flex items-center gap-1 text-[20px] font-semibold">
-              <FileText size="20px" className="stroke-primary mr-2" />
+              <FileText size="20px" className="stroke-primary" />
               {title}
             </div>
             <Button

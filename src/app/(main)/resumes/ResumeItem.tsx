@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { formatDate } from "date-fns";
-import { MoreVertical, Printer, Trash2 } from "lucide-react";
+import {
+  MoreVertical,
+  Printer,
+  Trash2,
+  Eye,
+  FileText,
+  DownloadIcon,
+} from "lucide-react";
 import { useRef, useState, useTransition } from "react";
 import { useReactToPrint } from "react-to-print";
 
@@ -72,18 +79,24 @@ export default function ResumeItem({ resume }: ResumeItemProps) {
           <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
         </Link>
       </div>
-      <MoreMenu resumeId={resume.id} onPrintClick={reactToPrintFn} />
+      <MoreMenu
+        resumeId={resume.id}
+        resume={resume}
+        onPrintClick={reactToPrintFn}
+      />
     </div>
   );
 }
 
 interface MoreMenuProps {
   resumeId: string;
+  resume: ResumeServerData;
   onPrintClick: () => void;
 }
 
-function MoreMenu({ resumeId, onPrintClick }: MoreMenuProps) {
+function MoreMenu({ resumeId, resume, onPrintClick }: MoreMenuProps) {
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+  const [showFullPreview, setShowFullPreview] = useState(false);
 
   return (
     <>
@@ -107,6 +120,13 @@ function MoreMenu({ resumeId, onPrintClick }: MoreMenuProps) {
           </DropdownMenuItem>
           <DropdownMenuItem
             className="flex items-center gap-2"
+            onClick={() => setShowFullPreview(true)}
+          >
+            <Eye className="size-4" />
+            Preview
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            className="hidden md:flex items-center gap-2"
             onClick={onPrintClick}
           >
             <Printer className="size-4" />
@@ -114,11 +134,54 @@ function MoreMenu({ resumeId, onPrintClick }: MoreMenuProps) {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+
       <DeleteConfirmationDialog
         resumeId={resumeId}
         open={showDeleteConfirmation}
         onOpenChange={setShowDeleteConfirmation}
       />
+
+      <Dialog open={showFullPreview} onOpenChange={setShowFullPreview}>
+        <DialogTitle></DialogTitle>
+        <DialogContent
+          className="
+            sm:max-w-4xl p-0
+            w-full max-h-[90vh]
+            lg:max-h-[95vh]
+            overflow-y-auto
+          "
+        >
+          <div
+            className="
+              sticky top-0 z-10 
+              flex justify-between items-center 
+              w-full 
+              backdrop-blur bg-white 
+              dark:bg-black/70 
+              px-3 py-2 -mb-2
+            "
+          >
+            <div className="flex items-center gap-1 text-[20px] font-semibold">
+              <FileText size="20px" className="stroke-primary" />
+              {resume.title}
+            </div>
+            <Button
+              variant="outline"
+              size="icon"
+              title="Print Resume"
+              onClick={onPrintClick}
+            >
+              <DownloadIcon className="size-5" />
+            </Button>
+          </div>
+          <div className="w-full h-full px-2 pb-1 border-t">
+            <ResumePreview
+              resumeData={mapToResumeValues(resume)}
+              className="w-full h-full scale-100"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
