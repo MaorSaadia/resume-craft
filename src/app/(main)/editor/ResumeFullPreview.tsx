@@ -1,5 +1,5 @@
 import { ForwardedRef, forwardRef } from "react";
-import { ExpandIcon, FileText, PrinterIcon } from "lucide-react";
+import { DownloadIcon, ExpandIcon, FileText } from "lucide-react";
 import { useReactToPrint } from "react-to-print";
 
 import {
@@ -66,7 +66,7 @@ const ResumeFullPreview = forwardRef(
               title="Print Resume"
               onClick={() => handlePrint && handlePrint()}
             >
-              <PrinterIcon className="size-5" />
+              <DownloadIcon className="size-5" />
             </Button>
           </div>
           <div className="w-full h-full px-2 pb-1 border-t">
