@@ -45,6 +45,7 @@ export default function ResumeItem({ resume }: ResumeItemProps) {
   const reactToPrintFn = useReactToPrint({
     contentRef,
     documentTitle: resume.title || "Resume",
+    preserveAfterPrint: true,
   });
 
   const wasUpdated = resume.updatedAt !== resume.createdAt;
