@@ -127,7 +127,7 @@ function MoreMenu({ resumeId, resume, onPrintClick }: MoreMenuProps) {
             Preview
           </DropdownMenuItem>
           <DropdownMenuItem
-            className="hidden md:flex items-center gap-2"
+            className="flex items-center gap-2"
             onClick={onPrintClick}
           >
             <Printer className="size-4" />
