@@ -38,9 +38,13 @@ export default function ResumePreviewSection({
             setResumeData({ ...resumeData, borderStyle })
           }
         />
-        <ResumeFullPreview resumeData={resumeData} ref={contentRef} />
+        <ResumeFullPreview
+          resumeData={resumeData}
+          ref={contentRef}
+          title={resumeData.title || "Resume"}
+        />
         <ResumeDownloadButton
-          documentTitle={resumeData.title || "unamed"}
+          documentTitle={resumeData.title || "Resume"}
           contentRef={contentRef}
         />
       </div>

@@ -22,7 +22,7 @@ const ResumeDownloadButton: React.FC<ResumeDownloadButtonProps> = ({
     <Button
       variant="outline"
       size="icon"
-      title="Download Resume"
+      title="Download resume"
       onClick={() => handlePrint && handlePrint()}
     >
       <DownloadIcon className="size-5" />

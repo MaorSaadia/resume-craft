@@ -1,54 +1,74 @@
-import { useState, ForwardedRef, forwardRef } from "react";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { ForwardedRef, forwardRef } from "react";
+import { ExpandIcon, FileText } from "lucide-react";
+
 import {
   Dialog,
   DialogContent,
+  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import { ResumeValues } from "@/lib/validation";
 import ResumePreview from "@/components/ResumePreview";
-import { ExpandIcon } from "lucide-react";
 
 interface ResumeFullPreviewProps {
   resumeData: ResumeValues;
+  title?: string;
   className?: string;
 }
 
 const ResumeFullPreview = forwardRef(
   (
-    { resumeData, className }: ResumeFullPreviewProps,
+    { resumeData, title, className }: ResumeFullPreviewProps,
     ref: ForwardedRef<HTMLDivElement>,
   ) => {
-    const [isFullscreen, setIsFullscreen] = useState(false);
-
     return (
-      <>
-        <Dialog open={isFullscreen} onOpenChange={setIsFullscreen}>
-          <DialogTitle></DialogTitle>
-          <DialogTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              title="Expand"
-              onClick={() => setIsFullscreen(true)}
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline" size="icon" title="Preview">
+            <ExpandIcon size="size-5" />
+          </Button>
+        </DialogTrigger>
+        <DialogContent
+          className="
+            sm:max-w-4xl p-0
+            w-full max-h-[90vh]
+            lg:max-h-[95vh]
+            overflow-y-auto
+          "
+        >
+          <DialogHeader
+            className="!pb-0
+              !m-0 sticky top-0
+              backdrop-blur bg-white
+              dark:bg-black/70 z-10
+            "
+          >
+            <DialogTitle
+              className="
+                flex items-center gap-1 text-[20px]
+                pt-2 px-3 font-semibold opacity-100
+              "
             >
-              <ExpandIcon className="size-5" />
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-full h-[95vh] w-[95vw] p-6 overflow-y-auto">
+              <FileText
+                size="20px"
+                className="
+                  stroke-primary
+                "
+              />
+              {title}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="w-full h-full px-2 pb-4 border-t">
             <ResumePreview
               resumeData={resumeData}
               contentRef={ref}
-              className={cn(
-                "max-w-4xl mx-auto w-full h-full overflow-y-auto",
-                className,
-              )}
+              className={className}
             />
-          </DialogContent>
-        </Dialog>
-      </>
+          </div>
+        </DialogContent>
+      </Dialog>
     );
   },
 );
