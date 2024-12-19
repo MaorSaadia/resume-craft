@@ -9,7 +9,7 @@ interface ResumeDownloadButtonProps {
 }
 
 const ResumeDownloadButton: React.FC<ResumeDownloadButtonProps> = ({
-  documentTitle = "Resume",
+  documentTitle,
   contentRef,
 }) => {
   const handlePrint = useReactToPrint({
