@@ -6,13 +6,13 @@ import {
   lemonSqueezySetup,
 } from "@lemonsqueezy/lemonsqueezy.js";
 import { CreditCard, CalendarCheck, RefreshCcw } from "lucide-react";
+import { env } from "process";
 
-import prisma from "@/lib/prisma";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import prisma from "@/lib/prisma";
 import ManageSubscriptionButton from "./ManageSubscriptionButton";
 import GetSubscriptionButton from "./GetSubscriptionButton";
-import { env } from "process";
 
 export const metadata: Metadata = {
   title: "Billing",
@@ -59,7 +59,7 @@ export default async function Page() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-4xl space-y-6 px-4 py-8 dark:bg-gray-900">
+    <main className="mx-auto w-full max-w-4xl space-y-6 px-4 py-8 ">
       <div className="flex items-center justify-between">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">
           Billing
