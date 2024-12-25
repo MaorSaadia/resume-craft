@@ -24,6 +24,7 @@ export async function createCheckoutSession(variantId: string) {
     productOptions: {
       name: "Resume Craft Premium",
       description: "Premium subscription Resume Craft",
+      redirectUrl: `${env.NEXT_PUBLIC_BASE_URL}/billing/success`,
     },
     checkoutOptions: {
       embed: false,

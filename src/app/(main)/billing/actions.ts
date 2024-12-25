@@ -40,11 +40,10 @@ export async function createCustomerPortalSession() {
     // console.log("Full Subscription Result:", JSON.stringify(result, null, 2));
 
     // Access the customer portal URL from the nested structure
-    const originalCustomerPortalUrl =
-      result.data?.data.attributes.urls.customer_portal_update_subscription;
+    const portalUrl = result.data?.data.attributes.urls.customer_portal;
 
-    if (originalCustomerPortalUrl) {
-      const url = new URL(originalCustomerPortalUrl);
+    if (portalUrl) {
+      const url = new URL(portalUrl);
 
       url.searchParams.delete("expires");
 
@@ -55,19 +54,4 @@ export async function createCustomerPortalSession() {
     console.error("Detailed Customer Portal Session Error:", error);
     throw new Error("Failed to create customer portal session");
   }
-
-  // try {
-  //   const result = await getCustomer(subscription.lemonSqueezyCustomerId);
-  //   console.log("Full Subscription Result:", JSON.stringify(result, null, 2));
-
-  //   // Access the customer portal URL from the nested structure
-  //   const customerPortalUrl = result.data?.data.attributes.urls.customer_portal;
-  //   // console.log(customerPortalUrl);
-  //   if (customerPortalUrl) {
-  //     return customerPortalUrl;
-  //   }
-  // } catch (error) {
-  //   console.error("Detailed Customer Portal Session Error:", error);
-  //   throw new Error("Failed to create customer portal session");
-  // }
 }
