@@ -9,6 +9,7 @@ import { getUserSubscriptionLevel } from "@/lib/subscription";
 import prisma from "@/lib/prisma";
 import CreateResumeButton from "./CreateResumeButton";
 import ResumeItem from "./ResumeItem";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -57,7 +58,7 @@ export default async function Page() {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
             <h1 className="text-3xl font-bold">Resume Dashboard</h1>
-            <p className="text-green-400 mt-1">
+            <p className="text-green-500 mt-1">
               {totalCount} of{" "}
               {maxResumes === Infinity ? "unlimited" : maxResumes} resumes used
             </p>
@@ -123,11 +124,16 @@ export default async function Page() {
               ))}
             </div>
           ) : (
-            <Card className="bg-gray-50">
+            <Card>
               <CardContent className="flex flex-col items-center justify-center py-12">
-                <div className="rounded-full bg-gray-100 p-3">
-                  <Plus className="h-6 w-6 text-gray-600" />
-                </div>
+                <Link
+                  href="/editor"
+                  className="cursor-pointer hover:opacity-80"
+                >
+                  <div className="rounded-full bg-gray-100 p-3">
+                    <Plus className="h-6 w-6 text-gray-600" />
+                  </div>
+                </Link>
                 <h3 className="mt-4 text-lg font-medium">No resumes yet</h3>
                 <p className="mt-1 text-sm text-gray-500">
                   Get started by creating your first resume
