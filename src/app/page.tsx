@@ -48,7 +48,7 @@ export default function Home() {
 
           <div>
             <div className="mx-auto max-w-6xl px-6 lg:px-8">
-              <div className="mt-16 flow-root sm:mt-24">
+              <div className="mt-16 flow-root">
                 <div className="dark:bg-gray-50/2 -m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 dark:bg-gray-100/50 dark:ring-gray-100/50 lg:-m-4 lg:rounded-2xl lg:p-4">
                   <Image
                     src="/dashboard-preview.png"
@@ -205,7 +205,7 @@ export default function Home() {
         </div>
       </div>
       {/* Feature section */}
-      <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-36">
+      <div className="mx-auto mb-32 mt-24 max-w-5xl">
         <div className="mb-12 px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="mt-2 text-4xl font-bold text-zinc-900 dark:text-zinc-300 sm:text-5xl">
@@ -325,20 +325,35 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="mt-16 flow-root sm:mt-24">
-            <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-              <Image
-                src="/dashboard-preview.png"
-                alt="uploading preview"
-                width={1419}
-                height={732}
-                quality={100}
-                className="rounded-md bg-white p-2 shadow-2xl ring-1 ring-gray-900/10 sm:p-8 md:p-20"
-              />
+        {/* Call To Action */}
+        <div className="relative isolate mt-16 px-6 py-8 sm:py-16 lg:px-4">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-300 sm:text-5xl">
+              Ready to Build Your Perfect Resume?
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-xl leading-8 text-zinc-600 dark:text-zinc-200">
+              Start crafting your professional resume today with our free plan.
+              No credit card required.
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-x-6">
+              <Button asChild size="lg" variant="premium">
+                <Link href="/resumes">Get Started for Free</Link>
+              </Button>
             </div>
           </div>
-        </div> */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          >
+            <div
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-green-600 to-lime-100 opacity-20"
+            />
+          </div>
+        </div>
       </div>
     </>
   );
