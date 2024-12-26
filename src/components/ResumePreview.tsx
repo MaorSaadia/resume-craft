@@ -21,6 +21,7 @@ import {
   getTechnologies,
   getLanguages,
   getLanguagesProficiency,
+  getTimeTranslation,
 } from "@/lib/translations";
 
 interface ResumePreviewProps {
@@ -253,7 +254,9 @@ function WorkExperienceSection({ resumeData }: ResumeSectionProps) {
               {exp.startDate && (
                 <span>
                   {formatDate(exp.startDate, "MM/yyyy")} -{" "}
-                  {exp.endDate ? formatDate(exp.endDate, "MM/yyyy") : "Present"}
+                  {exp.endDate
+                    ? formatDate(exp.endDate, "MM/yyyy")
+                    : getTimeTranslation(titleLanguage!)}
                 </span>
               )}
             </div>

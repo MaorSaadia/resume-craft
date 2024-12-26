@@ -77,6 +77,84 @@ export function getWorkExperienceTranslation(lang: string): string {
   return workExperienceTranslations[lang] || workExperienceTranslations["eng"];
 }
 
+export function getTimeTranslation(lang: string): string {
+  return timeTranslation[lang] || timeTranslation["eng"];
+}
+
+export const timeTranslation: Record<string, string> = {
+  eng: "Present",
+  heb: "הווה",
+  cmn: "现在", // Mandarin Chinese
+  spa: "Presente", // Spanish
+  rus: "Настоящее время", // Russian
+  arb: "الحاضر", // Standard Arabic
+  ben: "বর্তমান", // Bengali
+  hin: "वर्तमान", // Hindi
+  por: "Presente", // Portuguese
+  ind: "Saat ini", // Indonesian
+  jpn: "現在", // Japanese
+  fra: "Présent", // French
+  deu: "Gegenwart", // German
+  jav: "Saiki", // Javanese
+  kor: "현재", // Korean
+  tel: "ప్రస్తుతం", // Telugu
+  vie: "Hiện tại", // Vietnamese
+  mar: "सध्याचा", // Marathi
+  ita: "Presente", // Italian
+  tam: "தற்போது", // Tamil
+  tur: "Şu an", // Turkish
+  urd: "موجودہ", // Urdu
+  guj: "વર્તમાન", // Gujarati
+  pol: "Obecnie", // Polish
+  ukr: "Тепер", // Ukrainian
+  kan: "ಪ್ರಸ್ತುತ", // Kannada
+  mai: "वर्तमान", // Maithili
+  mal: "ഇപ്പോഴത്തെ", // Malayalam
+  pes: "حال", // Iranian Persian
+  mya: "လက်ရှိ", // Burmese
+  swh: "Sasa", // Swahili
+  sun: "Ayeuna", // Sundanese
+  ron: "Prezent", // Romanian
+  pan: "ਵਰਤਮਾਨ", // Panjabi
+  bho: "वर्तमान", // Bhojpuri
+  amh: "አሁን", // Amharic
+  hau: "Yanzu", // Hausa
+  fuv: "Yanzu", // Nigerian Fulfulde
+  bos: "Sadašnjost", // Bosnian
+  hrv: "Sadašnjost", // Croatian
+  nld: "Heden", // Dutch
+  srp: "Садашњост", // Serbian (Cyrillic)
+  tha: "ปัจจุบัน", // Thai
+  ckb: "ئێستا", // Central Kurdish
+  yor: "Bayi", // Yoruba
+  uzn: "Hozirgi", // Northern Uzbek
+  zlm: "Sekarang", // Malay
+  ibo: "Ugbu a", // Igbo
+  npi: "वर्तमान", // Nepali
+  ceb: "Karon", // Cebuano
+  skr: "موجودہ", // Saraiki
+  tgl: "Kasalukuyan", // Tagalog
+  hun: "Jelenlegi", // Hungarian
+  azj: "Hazırda", // North Azerbaijani
+  sin: "වර්තමානය", // Sinhala
+  ell: "Παρόν", // Modern Greek
+  ces: "Současnost", // Czech
+  mag: "वर्तमान", // Magahi
+  run: "Ubwo bw'ubu", // Rundi
+  bel: "Сучаснасць", // Belarusian
+  plt: "Ankehitriny", // Plateau Malagasy
+  nya: "Pano", // Nyanja
+  pbu: "اوس", // Northern Pashto
+  kin: "Ubu", // Kinyarwanda
+  zul: "Manje", // Zulu
+  bul: "Настояще", // Bulgarian
+  swe: "Nuvarande", // Swedish
+  lin: "Sikoyo", // Lingala
+  som: "Hadda", // Somali
+  ilo: "Ita nga", // Iloko
+  kaz: "Қазіргі", // Kazakh
+};
+
 export const educationTranslations: Record<string, string> = {
   eng: "Education",
   heb: "השכלה",
