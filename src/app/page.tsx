@@ -77,7 +77,133 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* Mobile preview section */}
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <div className="mt-16 flow-root sm:mt-24">
+          <h2 className="text-center text-3xl font-bold text-zinc-900 dark:text-zinc-300 sm:text-4xl mb-12">
+            Create Resumes Anywhere, Anytime
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="relative mx-auto max-w-[300px]">
+              <div className="dark:bg-gray-50/2 rounded-[2.5rem] bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 dark:ring-gray-100/50">
+                <Image
+                  src="/mobile-preview-1.png"
+                  alt="mobile app preview - resume editor"
+                  width={317}
+                  height={657}
+                  quality={100}
+                  className="rounded-[2rem] shadow-2xl"
+                />
+              </div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+              >
+                <div
+                  style={{
+                    clipPath:
+                      "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+                  }}
+                  className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-green-400 to-lime-100 opacity-20"
+                />
+              </div>
+            </div>
 
+            <div className="relative mx-auto max-w-[300px]">
+              <div className="dark:bg-gray-50/2 rounded-[2.5rem] bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 dark:ring-gray-100/50">
+                <Image
+                  src="/mobile-preview-2.png"
+                  alt="mobile app preview - resume template"
+                  width={317}
+                  height={657}
+                  quality={100}
+                  className="rounded-[2rem] shadow-2xl"
+                />
+              </div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+              >
+                <div
+                  style={{
+                    clipPath:
+                      "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+                  }}
+                  className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-lime-600 to-lime-100 opacity-20"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Language Support section */}
+      <div className="mx-auto mt-32 max-w-6xl px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-300 sm:text-4xl">
+              Create Resumes in Any Language
+            </h2>
+            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-200">
+              Our AI supports multiple languages and writing systems, including
+              RTL languages like Arabic, Hebrew, and Persian.
+            </p>
+            <div className="mt-8 grid grid-cols-3 gap-4">
+              {[
+                "English",
+                "日本語",
+                "العربية",
+                "Español",
+                "עברית",
+                "हिंदी",
+              ].map((lang) => (
+                <div
+                  key={lang}
+                  className="flex items-center justify-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg"
+                >
+                  <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                    {lang}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="dark:bg-gray-50/2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 dark:ring-gray-100/50">
+              <div className="grid grid-cols-2 gap-4">
+                <Image
+                  src="/resume-ltr.png"
+                  alt="LTR resume example"
+                  width={756}
+                  height={792}
+                  quality={100}
+                  className="rounded-lg shadow-md object-cover"
+                />
+                <Image
+                  src="/resume-rtl.png"
+                  alt="RTL resume example"
+                  width={756}
+                  height={792}
+                  quality={100}
+                  className="rounded-lg shadow-md object-cover"
+                />
+              </div>
+            </div>
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 -bottom-20 -z-10 transform-gpu overflow-hidden blur-3xl"
+            >
+              <div
+                style={{
+                  clipPath:
+                    "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+                }}
+                className="relative left-[calc(50%-13rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-green-400 to-lime-100 opacity-20"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Feature section */}
       <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-36">
         <div className="mb-12 px-6 lg:px-8">
@@ -124,6 +250,7 @@ export default function Home() {
             </div>
           </li>
         </ol>
+
         {/* Feature Highlights */}
         <div className="mx-auto mt-16 max-w-6xl px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-3">
