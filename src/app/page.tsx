@@ -21,7 +21,7 @@ export default function Home() {
           in Minutes
         </h1>
         <p className="mt-5 max-w-prose text-zinc-700 dark:text-zinc-300 sm:text-lg">
-          ResumeCraft uses <span className="font-bold">advanced AI</span> to
+          AI ResumeCraft uses <span className="font-bold">advanced AI</span> to
           help you create a professional, standout resume with ease - no design
           skills required.
         </p>
@@ -53,10 +53,10 @@ export default function Home() {
                   <Image
                     src="/dashboard-preview.png"
                     alt="product preview"
-                    width={1280}
-                    height={720}
+                    width={1724}
+                    height={871}
                     quality={100}
-                    className="rounded-md bg-white p-2 shadow-2xl ring-1 ring-gray-900/10 dark:ring-gray-100/50 sm:p-8 md:p-20"
+                    className="rounded-md bg-white p-2 shadow-2xl ring-1 ring-gray-900/10 dark:ring-gray-100/50"
                   />
                 </div>
               </div>
