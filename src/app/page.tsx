@@ -328,7 +328,7 @@ export default function Home() {
         {/* Call To Action */}
         <div className="relative isolate mt-16 px-6 py-8 sm:py-16 lg:px-4">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-300 sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-300 sm:text-4xl">
               Ready to Build Your Perfect Resume?
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-xl leading-8 text-zinc-600 dark:text-zinc-200">
