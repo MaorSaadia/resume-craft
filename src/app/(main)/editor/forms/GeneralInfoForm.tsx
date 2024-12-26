@@ -61,9 +61,9 @@ export default function GeneralInfoForm({
             name="title"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Project name</FormLabel>
+                <FormLabel>Resume name</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="My cool resume" autoFocus />
+                  <Input {...field} placeholder="My resume" autoFocus />
                 </FormControl>
                 <FormMessage />
               </FormItem>
