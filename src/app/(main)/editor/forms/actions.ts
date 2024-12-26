@@ -88,7 +88,7 @@ export async function generateWorkExperience(
 
   const prompt = `
   You are a job resume generator AI. Your task is to generate a single work experience entry based on the user input.
-  Your response must adhere to the following structure. You can omit fields if they can't be infered from the provided data, but don't add any new ones.
+  Your response must adhere to the following structure. You can omit fields if they can't be inferred from the provided data, but don't add any new ones.
   Generate a structured work experience entry based on this description.
   ${description}
   
@@ -97,7 +97,7 @@ export async function generateWorkExperience(
   Company: <company name>
   Start date: <YYYY-MM-DD> (only if provided)
   End date: <YYYY-MM-DD> (only if provided)
-  Description: <an optimized description in bullet format like this •. Drop a line at any bullet point, might be infered from the job title>
+  Description: <an optimized description in bullet format like this •. Drop a line at any bullet point, might be inferred from the job title>
   
   Provide only the structured response, very importent! response with the same data language.
   `;
