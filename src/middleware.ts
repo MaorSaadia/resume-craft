@@ -11,12 +11,6 @@ export default clerkMiddleware(async (auth, request) => {
   if (!isPublicRoute(request)) {
     await auth.protect();
   }
-
-  // Add this section to handle sign-out redirects
-  if (!isPublicRoute(request)) {
-    const homeUrl = new URL("/", request.url);
-    return Response.redirect(homeUrl);
-  }
 });
 
 export const config = {
