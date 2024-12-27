@@ -8,21 +8,27 @@ import { Button } from "@/components/ui/button";
 
 interface CreateResumeButtonProps {
   canCreate: boolean;
+  totalCount?: number;
 }
 
 export default function CreateResumeButton({
   canCreate,
+  totalCount,
 }: CreateResumeButtonProps) {
   const premiumModal = usePremiumModal();
-
+  console.log(totalCount);
   if (canCreate) {
     return (
-      <Button asChild className="mx-auto flex w-fit gap-2">
-        <Link href="/editor">
-          <PlusSquare className="size-5" />
-          New resume
-        </Link>
-      </Button>
+      <>
+        {totalCount !== 0 && (
+          <Button asChild className="mx-auto flex w-fit gap-2">
+            <Link href="/editor">
+              <PlusSquare className="size-5" />
+              New resume
+            </Link>
+          </Button>
+        )}
+      </>
     );
   }
 

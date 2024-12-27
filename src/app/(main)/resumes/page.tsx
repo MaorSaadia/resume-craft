@@ -63,7 +63,7 @@ export default async function Page() {
               {maxResumes === Infinity ? "unlimited" : maxResumes} resumes used
             </p>
           </div>
-          <CreateResumeButton canCreate={canCreate} />
+          <CreateResumeButton canCreate={canCreate} totalCount={totalCount} />
         </div>
 
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
