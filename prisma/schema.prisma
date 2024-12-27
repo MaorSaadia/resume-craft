@@ -118,8 +118,8 @@ model Language {
 }
 
 model UserSubscription {
-  id                      String   @id @default(cuid())
-  userId                  String   @unique
+  id                            String   @id @default(cuid())
+  userId                        String   @unique
   lemonSqueezyCustomerId        String   @unique
   lemonSqueezySubscriptionId    String   @unique
   lemonSqueezyPriceId           String
@@ -128,7 +128,7 @@ model UserSubscription {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  canceledAt                 DateTime? // Optional field for cancellation timestamp
+  canceledAt                    DateTime? // Optional field for cancellation timestamp
 
   @@map("user_subscriptions")
 }

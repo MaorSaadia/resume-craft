@@ -5,7 +5,7 @@ import {
   getSubscription,
   lemonSqueezySetup,
 } from "@lemonsqueezy/lemonsqueezy.js";
-import { CreditCard, CalendarCheck, RefreshCcw } from "lucide-react";
+import { CalendarCheck, RefreshCcw } from "lucide-react";
 import { env } from "process";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -38,7 +38,7 @@ export default async function Page() {
   let productName = "Free";
   let status = "Active";
   let renewalDate = null;
-  let cardLastFour = null;
+  // let cardLastFour = null;
 
   if (subscription) {
     try {
@@ -52,7 +52,7 @@ export default async function Page() {
       renewalDate = subscriptionData?.renews_at
         ? new Date(subscriptionData.renews_at)
         : null;
-      cardLastFour = subscriptionData?.card_last_four;
+      // cardLastFour = subscriptionData?.card_last_four;
     } catch (error) {
       console.error("Failed to retrieve product details:", error);
     }
@@ -110,7 +110,7 @@ export default async function Page() {
               </div>
             )}
 
-            {cardLastFour && (
+            {/* {cardLastFour && (
               <div className="flex items-center space-x-4">
                 <CreditCard className="h-6 w-6 text-purple-600 dark:text-purple-400" />
                 <div>
@@ -122,7 +122,7 @@ export default async function Page() {
                   </p>
                 </div>
               </div>
-            )}
+            )} */}
           </CardContent>
         </Card>
 

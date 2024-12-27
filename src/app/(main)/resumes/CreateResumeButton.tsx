@@ -16,7 +16,7 @@ export default function CreateResumeButton({
   totalCount,
 }: CreateResumeButtonProps) {
   const premiumModal = usePremiumModal();
-  console.log(totalCount);
+
   if (canCreate) {
     return (
       <>

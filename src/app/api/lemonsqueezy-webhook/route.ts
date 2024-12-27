@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     const signature = req.headers.get("X-Signature") || "";
     const eventType = req.headers.get("X-Event-Name") || "";
 
-    // console.log(eventType);
+    console.log(eventType);
 
     // Signature Verification function
     function verifyWebhookSignature(
@@ -69,6 +69,9 @@ async function handleSubscriptionCreated(event: any) {
   const data = event.data;
   const userId = event.meta.custom_data.user_id;
 
+  console.log("Created");
+  console.log(data);
+
   await prisma.userSubscription.create({
     data: {
       userId: userId,
@@ -84,7 +87,7 @@ async function handleSubscriptionCreated(event: any) {
 async function handleSubscriptionUpdated(event: any) {
   const data = event.data;
 
-  // console.log("Updated");
+  console.log("Updated");
 
   await prisma.userSubscription.update({
     where: {
@@ -101,7 +104,7 @@ async function handleSubscriptionUpdated(event: any) {
 async function handleSubscriptionCancelled(event: any) {
   const data = event.data;
 
-  // console.log("Cancelled");
+  console.log("Cancelled");
 
   await prisma.userSubscription.update({
     where: {
