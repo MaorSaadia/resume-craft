@@ -83,16 +83,16 @@ export default function Home() {
           <h2 className="text-center text-3xl font-bold text-zinc-900 dark:text-zinc-300 sm:text-4xl mb-12">
             Create Resumes Anywhere, Anytime
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="relative mx-auto max-w-[300px]">
-              <div className="dark:bg-gray-50/2 rounded-[2.5rem] bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 dark:ring-gray-100/50">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="relative mx-auto max-w-[200px] sm:max-w-[250px] md:max-w-[300px]">
+              <div className="dark:bg-gray-50/2 rounded-[2rem] bg-gray-900/5 p-1.5 sm:p-2 ring-1 ring-inset ring-gray-900/10 dark:ring-gray-100/50">
                 <Image
                   src="/mobile-preview-1.png"
                   alt="mobile app preview - resume editor"
                   width={317}
                   height={657}
                   quality={100}
-                  className="rounded-[2rem] shadow-2xl"
+                  className="rounded-[1.8rem] shadow-2xl w-full h-auto"
                 />
               </div>
               <div
@@ -109,15 +109,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative mx-auto max-w-[300px]">
-              <div className="dark:bg-gray-50/2 rounded-[2.5rem] bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 dark:ring-gray-100/50">
+            <div className="relative mx-auto max-w-[200px] sm:max-w-[250px] md:max-w-[300px]">
+              <div className="dark:bg-gray-50/2 rounded-[2rem] bg-gray-900/5 p-1.5 sm:p-2 ring-1 ring-inset ring-gray-900/10 dark:ring-gray-100/50">
                 <Image
                   src="/mobile-preview-2.png"
                   alt="mobile app preview - resume template"
                   width={317}
                   height={657}
                   quality={100}
-                  className="rounded-[2rem] shadow-2xl"
+                  className="rounded-[1.8rem] shadow-2xl w-full h-auto"
                 />
               </div>
               <div
@@ -137,7 +137,7 @@ export default function Home() {
         </div>
       </div>
       {/* Language Support section */}
-      <div className="mx-auto mt-32 max-w-6xl px-6 lg:px-8">
+      <div className="mx-auto mt-20 max-w-6xl px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-300 sm:text-4xl">
