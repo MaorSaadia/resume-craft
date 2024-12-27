@@ -15,6 +15,13 @@ import { Input } from "@/components/ui/input";
 import { EditorFormProps } from "@/lib/types";
 import { personalInfoSchema, PersonalInfoValues } from "@/lib/validation";
 
+// Utility function to normalize URLs
+function normalizeUrl(url: string): string {
+  return url.startsWith("https://") || url.startsWith("http://")
+    ? url
+    : `https://${url}`;
+}
+
 export default function PersonalInfoForm({
   resumeData,
   setResumeData,
@@ -39,7 +46,19 @@ export default function PersonalInfoForm({
     const { unsubscribe } = form.watch(async (values) => {
       const isValid = await form.trigger();
       if (!isValid) return;
-      setResumeData({ ...resumeData, ...values });
+
+      const updatedValues = {
+        ...values,
+        portfolioLink: values.portfolioLink
+          ? normalizeUrl(values.portfolioLink)
+          : "",
+        linkedinLink: values.linkedinLink
+          ? normalizeUrl(values.linkedinLink)
+          : "",
+        githubLink: values.githubLink ? normalizeUrl(values.githubLink) : "",
+      };
+
+      setResumeData({ ...resumeData, ...updatedValues });
     });
     return unsubscribe;
   }, [form, resumeData, setResumeData]);
