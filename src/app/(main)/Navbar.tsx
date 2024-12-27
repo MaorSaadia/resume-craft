@@ -30,7 +30,7 @@ export default function Navbar() {
           <ThemeToggle />
 
           <UserButton
-            afterSwitchSessionUrl="/"
+            afterSignOutUrl=""
             appearance={{
               baseTheme: resolvedTheme === "dark" ? dark : undefined,
               elements: {
