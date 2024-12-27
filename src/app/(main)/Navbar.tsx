@@ -25,13 +25,12 @@ export default function Navbar() {
             quality={100}
             className="transition-transform duration-300 group-hover:scale-105"
           />
-          {/* <span className="text-2xl font-semibold text-gray-800 dark:text-gray-200 tracking-tight group-hover:text-green-500 dark:group-hover:text-green-300 transition-colors">
-            Resume Craft
-          </span> */}
         </Link>
         <div className="flex items-center gap-3">
           <ThemeToggle />
+
           <UserButton
+            afterSwitchSessionUrl="/"
             appearance={{
               baseTheme: resolvedTheme === "dark" ? dark : undefined,
               elements: {
