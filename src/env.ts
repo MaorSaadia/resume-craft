@@ -10,6 +10,8 @@ export const env = createEnv({
     LEMON_SQUEEZY_API_KEY: z.string().min(1),
     LEMON_SQUEEZY_STORE_ID: z.string().min(1),
     LEMON_SQUEEZY_WEBHOOK_SECRET: z.string().min(1),
+    EMAIL: z.string().email(),
+    EMAIL_PASS: z.string().min(1),
   },
   client: {
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
