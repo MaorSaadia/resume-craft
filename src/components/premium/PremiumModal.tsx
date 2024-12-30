@@ -47,33 +47,37 @@ export default function PremiumModal() {
         }
       }}
     >
-      <DialogContent className="max-w-3xl">
-        <DialogHeader>
-          <DialogTitle className="text-2xl text-center font-bold">
+      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto sm:max-h-none">
+        <DialogHeader className="p-4 sm:p-6">
+          <DialogTitle className="text-xl sm:text-2xl text-center font-bold">
             Choose Your Plan
           </DialogTitle>
-          <p className="text-center text-muted-foreground">
+          <p className="text-center text-sm sm:text-base text-muted-foreground">
             Unlock premium features to enhance your resume building experience
           </p>
         </DialogHeader>
-        <div className="space-y-6 p-6">
-          <div className="flex gap-6">
-            <div className="flex-1 rounded-lg border p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div className="p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <div className="flex-1 rounded-lg border p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex h-full flex-col">
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-center">Premium</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-center">
+                    Premium
+                  </h3>
                   <div className="text-center">
-                    <span className="text-3xl font-bold">$4.99</span>
+                    <span className="text-2xl sm:text-3xl font-bold">
+                      $4.99
+                    </span>
                     <span className="text-muted-foreground">/month</span>
                   </div>
                 </div>
-                <ul className="my-6 space-y-3 flex-1">
+                <ul className="my-4 sm:my-6 space-y-3 flex-1">
                   {premiumFeatures.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
                       <div className="rounded-full bg-green-100 p-1">
                         <Check className="size-4 text-green-600" />
                       </div>
-                      <span>{feature}</span>
+                      <span className="text-sm sm:text-base">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -90,24 +94,26 @@ export default function PremiumModal() {
                 </Button>
               </div>
             </div>
-            <div className="flex-1 rounded-lg border border-green-200 bg-green-50/50 p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex-1 rounded-lg border border-green-200 bg-green-50/50 p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow">
               <div className="flex h-full flex-col">
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-center bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent">
+                  <h3 className="text-lg sm:text-xl font-bold text-center bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent">
                     Premium Plus
                   </h3>
                   <div className="text-center">
-                    <span className="text-3xl font-bold">$9.99</span>
+                    <span className="text-2xl sm:text-3xl font-bold">
+                      $9.99
+                    </span>
                     <span className="text-muted-foreground">/month</span>
                   </div>
                 </div>
-                <ul className="my-6 space-y-3 flex-1">
+                <ul className="my-4 sm:my-6 space-y-3 flex-1">
                   {premiumPlusFeatures.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
                       <div className="rounded-full bg-green-100 p-1">
                         <Check className="size-4 text-green-600" />
                       </div>
-                      <span>{feature}</span>
+                      <span className="text-sm sm:text-base">{feature}</span>
                     </li>
                   ))}
                 </ul>
