@@ -91,7 +91,8 @@ const ContactEmail: React.FC<ContactEmailProps> = ({
 
             <Text className="text-sm text-gray-500 text-center mt-8">
               This message was received on{" "}
-              {new Date().toLocaleDateString("en-US", {
+              {new Date().toLocaleString("en-US", {
+                timeZone: "Asia/Jerusalem",
                 weekday: "long",
                 year: "numeric",
                 month: "long",
