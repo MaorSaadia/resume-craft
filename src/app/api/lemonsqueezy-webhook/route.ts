@@ -88,6 +88,7 @@ async function handleSubscriptionUpdated(event: any) {
   const data = event.data;
 
   console.log("Updated");
+  console.log(data);
 
   await prisma.userSubscription.update({
     where: {
