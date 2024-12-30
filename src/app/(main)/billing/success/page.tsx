@@ -35,7 +35,7 @@ export default function Page() {
 
             <p className="text-xs sm:text-sm text-gray-500">
               Need help?{" "}
-              <a href="/support" className="text-green-600 hover:underline">
+              <a href="/contact" className="text-green-600 hover:underline">
                 Contact our support team
               </a>
             </p>

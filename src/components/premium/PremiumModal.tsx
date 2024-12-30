@@ -56,7 +56,7 @@ export default function PremiumModal() {
             Unlock premium features to enhance your resume building experience
           </p>
         </DialogHeader>
-        <div className="p-4 sm:p-6">
+        <div className="p-4 sm:p-6 -mt-8">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <div className="flex-1 rounded-lg border p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex h-full flex-col">
@@ -81,17 +81,22 @@ export default function PremiumModal() {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  className="w-full mt-auto"
-                  onClick={() =>
-                    handlePremiumClick(
-                      env.NEXT_PUBLIC_LEMON_SQUEEZY_VARIANT_ID_PRO_MONTHLY,
-                    )
-                  }
-                  disabled={loading}
-                >
-                  Get Premium
-                </Button>
+                <div className="space-y-4">
+                  <Button
+                    className="w-full"
+                    onClick={() =>
+                      handlePremiumClick(
+                        env.NEXT_PUBLIC_LEMON_SQUEEZY_VARIANT_ID_PRO_MONTHLY,
+                      )
+                    }
+                    disabled={loading}
+                  >
+                    Get Premium
+                  </Button>
+                  <p className="text-center text-xs text-muted-foreground">
+                    Cancel anytime. No questions asked.
+                  </p>
+                </div>
               </div>
             </div>
             <div className="flex-1 rounded-lg border border-green-200 bg-green-50/50 p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow">
@@ -117,18 +122,23 @@ export default function PremiumModal() {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  variant="premium"
-                  className="w-full mt-auto"
-                  onClick={() =>
-                    handlePremiumClick(
-                      env.NEXT_PUBLIC_LEMON_SQUEEZY_VARIANT_ID_PRO_PLUS_MONTHLY,
-                    )
-                  }
-                  disabled={loading}
-                >
-                  Get Premium Plus
-                </Button>
+                <div className="space-y-4">
+                  <Button
+                    variant="premium"
+                    className="w-full"
+                    onClick={() =>
+                      handlePremiumClick(
+                        env.NEXT_PUBLIC_LEMON_SQUEEZY_VARIANT_ID_PRO_PLUS_MONTHLY,
+                      )
+                    }
+                    disabled={loading}
+                  >
+                    Get Premium Plus
+                  </Button>
+                  <p className="text-center text-xs text-muted-foreground">
+                    Cancel anytime. No questions asked.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
