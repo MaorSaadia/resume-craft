@@ -5,6 +5,8 @@ const isPublicRoute = createRouteMatcher([
   "/sign-in(.*)",
   "/sign-up(.*)",
   "/api/lemonsqueezy-webhook",
+  "/sitemap.xml",
+  "/robots.txt",
 ]);
 
 export default clerkMiddleware(async (auth, request) => {
