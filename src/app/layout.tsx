@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     template: "%s | AI ResumeCraft",
     default: "AI ResumeCraft - Professional Resume Builder with AI",
   },
-  description:
-    "Create professional resumes with AI-powered tools. Free plan available. Premium features include AI writing assistance and unlimited resumes.",
   keywords:
-    "resume builder, AI resume, CV maker, professional resume, career tools",
+    "resume builder, AI resume, CV maker, professional resume, career tools, resume template, free resume builder, online resume creator, resume writing assistant, AI CV builder, job application tools, resume generator, resume design, modern resume templates, professional CV maker, resume writing tips, career development tools, resume formatting, job search tools, resume optimization",
+  description:
+    "Create professional, ATS-friendly resumes instantly with AI-powered tools. Free resume builder with premium features including AI writing assistance, multiple templates, and unlimited resumes. Perfect for job seekers, professionals, and students.",
   openGraph: {
     type: "website",
     title: "AI ResumeCraft - Create Professional Resumes with AI",
@@ -92,8 +92,16 @@ export default function RootLayout({
                   },
                 ],
               },
-              featureList:
-                "AI Content Generation, Multiple Languages, Professional Templates",
+              featureList: [
+                "AI Content Generation",
+                "Multiple Languages",
+                "Professional Templates",
+                "ATS-Friendly Resumes",
+                "Real-time Preview",
+                "Multiple Export Formats",
+                "Custom Sections",
+                "Professional Design Templates",
+              ],
             })}
           </Script>
         </body>
