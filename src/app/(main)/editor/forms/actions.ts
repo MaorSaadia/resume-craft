@@ -87,19 +87,31 @@ export async function generateWorkExperience(
   const { description } = generateWorkExperienceSchema.parse(input);
 
   const prompt = `
-  You are a job resume generator AI. Your task is to generate a single work experience entry based on the user input.
-  Your response must adhere to the following structure. You can omit fields if they can't be inferred from the provided data, but don't add any new ones.
-  Generate a structured work experience entry based on this description.
-  ${description}
+  You are ResumeExpert AI, a specialized professional resume writer with expertise in transforming basic job descriptions into powerful resume entries that highlight achievements and skills.
   
-  Required format:
-  Job title: <job title>
-  Company: <company name>
-  Start date: <YYYY-MM-DD> (only if provided)
-  End date: <YYYY-MM-DD> (only if provided)
-  Description: <an optimized description in bullet format like this •. Drop a line at any bullet point, might be inferred from the job title>
+  TASK: Transform the following job description into a structured, achievement-focused work experience entry that will impress recruiters and pass ATS screening.
   
-  Provide only the structured response, very importent! response with the same data language.
+  INPUT: ${description}
+  
+  OUTPUT FORMAT:
+  Job title: [Extract or infer the most impressive version of the role]
+  Company: [Extract or infer company name]
+  Start date: [YYYY-MM-DD format if provided, otherwise omit]
+  End date: [YYYY-MM-DD format if provided or "Present" for current roles, otherwise omit]
+  Description: [Transform the input into 3-5 powerful bullet points that:
+    • Start with strong action verbs
+    • Include metrics and quantifiable achievements where possible (revenue, percentages, team size)
+    • Highlight relevant skills and technologies
+    • Focus on impact and results, not just responsibilities
+    • Are concise (1-2 lines each)
+    • Are properly formatted with bullet points (•) and line breaks]
+  
+  IMPORTANT:
+  1. Preserve the original language of the input
+  2. Do NOT fabricate specific metrics if not provided
+  3. Respond ONLY with the structured content in the exact format specified above
+  4. If certain fields cannot be reasonably inferred, leave them blank
+  5. Optimize for ATS compatibility by incorporating relevant industry keywords
   `;
 
   try {
@@ -140,17 +152,29 @@ export async function generateProjectExperience(
   const { description } = generateProjectExperienceSchema.parse(input);
 
   const prompt = `
-  You are a job resume generator AI. Your task is to generate a single project experience entry based on the user input.
-  Your response must adhere to the following structure. You can omit fields if they can't be inferred from the provided data, but don't add any new ones.
-  Generate a structured project experience entry based on this description:
-  ${description}
+  You are ResumeExpert AI, a specialized resume writer with deep expertise in translating technical projects into compelling resume content that demonstrates technical skills and problem-solving abilities.
   
-  Required format:
-  Project name: <project name>
-  Technologies used: <list of technologies>
-  Description: <an optimized description in bullet format like this •, highlighting key achievements and technical details>
+  TASK: Transform the following project description into a structured, achievement-focused project entry that will impress technical recruiters.
   
-  Provide only the structured response,very importent! response with the same data language.
+  INPUT: ${description}
+  
+  OUTPUT FORMAT:
+  Project name: [Extract or create a concise, professional project title]
+  Technologies used: [Identify and list all relevant technologies, programming languages, frameworks, tools, and methodologies]
+  Description: [Transform the input into 3-4 powerful bullet points that:
+    • Begin with strong technical action verbs (Developed, Architected, Engineered, Implemented, etc.)
+    • Highlight technical challenges overcome
+    • Emphasize the project's impact or business value
+    • Demonstrate your technical expertise and problem-solving abilities
+    • Include metrics where applicable (performance improvements, user adoption, etc.)
+    • Are properly formatted with bullet points (•) and line breaks]
+  
+  IMPORTANT:
+  1. Preserve the original language of the input
+  2. Focus on technical accomplishments rather than just listing features built
+  3. Respond ONLY with the structured content in the exact format specified above
+  4. Balance technical depth with clarity - make it impressive but understandable
+  5. Optimize for technical recruiter assessment by highlighting problem-solving skills
   `;
 
   try {
