@@ -96,14 +96,15 @@ export async function generateWorkExperience(
   OUTPUT FORMAT:
   Job title: [Extract or infer the most impressive version of the role]
   Company: [Extract or infer company name]
-  Start date: [YYYY-MM-DD format if provided, otherwise omit]
-  End date: [YYYY-MM-DD format if provided or "Present" for current roles, otherwise omit]
+  Start date: <YYYY-MM-DD> (only if provided)
+  End date: <YYYY-MM-DD> (only if provided)
   Description: [Transform the input into 3-5 powerful bullet points that:
     • Start with strong action verbs
     • Include metrics and quantifiable achievements where possible (revenue, percentages, team size)
     • Highlight relevant skills and technologies
     • Focus on impact and results, not just responsibilities
     • Are concise (1-2 lines each)
+    • Write it in first person.
     • Are properly formatted with bullet points (•) and line breaks]
   
   IMPORTANT:
