@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   keywords:
     "resume builder, AI resume, CV maker, professional resume, career tools, resume template, free resume builder, online resume creator, resume writing assistant, AI CV builder, job application tools, resume generator, resume design, modern resume templates, professional CV maker, resume writing tips, career development tools, resume formatting, job search tools, resume optimization, multilingual resume builder, resume in any language, RTL resume builder, LTR resume builder, international resume tool, global resume creator, AI multilingual resume, AI resume in multiple languages, bilingual resume builder, resume builder in Arabic, resume builder in Hindi, resume builder in Chinese",
   description:
-    "Create professional, ATS-friendly resumes instantly with AI-powered tools. Free resume builder with premium features including AI writing assistance, multiple templates, and unlimited resumes. Perfect for job seekers, professionals, and students.",
+    "Create professional, ATS-friendly resumes instantly with AI-powered tools. Free resume builder with premium features including AI writing assistance, and unlimited resumes. Perfect for job seekers, professionals, and students.",
   openGraph: {
     type: "website",
     title:

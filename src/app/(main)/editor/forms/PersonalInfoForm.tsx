@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -63,7 +63,7 @@ export default function PersonalInfoForm({
     return unsubscribe;
   }, [form, resumeData, setResumeData]);
 
-  const photoInputRef = useRef<HTMLInputElement>(null);
+  // const photoInputRef = useRef<HTMLInputElement>(null);
 
   return (
     <div className="mx-auto max-w-xl space-y-6">
@@ -73,7 +73,7 @@ export default function PersonalInfoForm({
       </div>
       <Form {...form}>
         <form className="space-y-3">
-          <FormField
+          {/* <FormField
             control={form.control}
             name="photo"
             render={({ field: { value, ...fieldValues } }) => (
@@ -108,7 +108,7 @@ export default function PersonalInfoForm({
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
           <div className="grid grid-cols-2 gap-3">
             <FormField
               control={form.control}
